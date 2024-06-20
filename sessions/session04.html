@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-04-29">
 
-<title>Version Control with Git - Basic Git workflow</title>
+<title>Version Control with Git - Branches</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,6 +85,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-clipboard-list" aria-label="clipboard-list"></i> Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sessions/index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-list-ol" aria-label="list-ol"></i> Sessions</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../code-of-conduct.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-handshake" aria-label="handshake"></i> Code of Conduct</span></a>
   </li>  
@@ -118,9 +125,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#this-session" id="toc-this-session" class="nav-link active" data-scroll-target="#this-session">This session</a></li>
-  <li><a href="#recipes-project" id="toc-recipes-project" class="nav-link" data-scroll-target="#recipes-project"><code>recipes</code> project</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#recipes-project" id="toc-recipes-project" class="nav-link" data-scroll-target="#recipes-project"><code>recipes</code> project</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul>
+  <li><a href="#create-and-merge-a-branch" id="toc-create-and-merge-a-branch" class="nav-link" data-scroll-target="#create-and-merge-a-branch">1. Create and merge a branch</a></li>
+  <li><a href="#create-and-resolve-a-merge-conflict" id="toc-create-and-resolve-a-merge-conflict" class="nav-link" data-scroll-target="#create-and-resolve-a-merge-conflict">2. Create and resolve a merge conflict</a></li>
+  </ul></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet">Cheatsheet</a></li>
   </ul>
 </nav>
     </div>
@@ -134,27 +147,27 @@ ul.task-list li input[type="checkbox"] {
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Basic Git workflow</h1>
+<h1 class="title">Branches</h1>
 <p class="subtitle lead">Session 04</p>
 </div>
 <div class="quarto-title-meta">
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Starts at:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 29, 2024</p>
+      <p class="date">10:00</p>
     </div>
   </div>
   </div>
 </header> <div class="about-links">
-  <a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/slides_session04.html" class="about-link" rel="" target="">
+  <a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session04.html" class="about-link" rel="" target="">
     <i class="bi bi-display"></i>
      <span class="about-link-text">Slides</span>
   </a>
-  <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html" class="about-link" rel="" target="">
+  <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html" class="about-link" rel="" target="">
     <i class="bi bi-book"></i>
-     <span class="about-link-text">Chapter: First steps with Git</span>
+     <span class="about-link-text">Chapter: Branches</span>
   </a>
-  <a href="https://version-control-basics.formr.org/" class="about-link" rel="" target="">
+  <a href="https://version-control-branches.formr.org/" class="about-link" rel="" target="">
     <i class="bi bi-input-cursor-text"></i>
      <span class="about-link-text">Quiz</span>
   </a>
@@ -167,49 +180,66 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="this-session" class="level2">
 <h2 data-anchor-id="this-session">This session</h2>
-<p>In this session, you will complete the following tasks:</p>
+<p>In this session, you will work on the following tasks:</p>
 <ol type="1">
-<li>Complete the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">“First steps with Git”</a> in the Version Control Book.</li>
-<li>Complete the exercises for the <a href="#recipes-project"><code>recipes</code> project</a>.</li>
-<li>Complete the <a href="https://version-control-basics.formr.org/">quiz</a>.</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading</strong>: Read the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">“Branches”</a> in the Version Control Book.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Implementation</strong>: Try out the commands in the chapter.</li>
+<li><i class="fa-solid fa-list-check" aria-label="list-check"></i> <strong>Exercises</strong>: Work on the <a href="#exercises">exercises</a> for the <a href="#recipes-project"><code>recipes</code> project</a>.</li>
+<li><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i> <strong>Quiz</strong>: Test your knowledge with the <a href="https://version-control-branches.formr.org/">quiz</a>.</li>
 </ol>
 <p>As always:</p>
 <ol type="1">
-<li>Try out the commands in the chapter and play around with them.</li>
+<li>Try out the commands of this session and play around with them.</li>
 <li>Check whether you have achieved the <a href="#learning-objectives">learning objectives</a>.</li>
+<li>Ask questions!</li>
+<li>Let’s <em>git</em> started!</li>
 </ol>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
+<p><span class="emoji" data-emoji="bulb">💡</span> You understand the purpose and benefits of using branches in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can create and switch between branches<br> <span class="emoji" data-emoji="bulb">💡</span> You can merge branches and resolve merge conflicts<br> <span class="emoji" data-emoji="bulb">💡</span> You can name at least three best practices when working with branches<br></p>
 </section>
 <section id="recipes-project" class="level2">
 <h2 data-anchor-id="recipes-project"><code>recipes</code> project</h2>
 <p>At the end of this session, you should have accomplished the following:</p>
 <ol type="1">
-<li>Commit at least three changes in <code>recipes.txt</code>.</li>
-<li>Make at least one commit using <code>git commit --amend</code>.
-<ul>
-<li>For example, add a recipe without a title first, commit, then add a title and use <code>git commit --amend</code> to add the title change to the same commit.</li>
-</ul></li>
-<li>Create a <code>.gitignore</code> file
-<ul>
-<li>Everyone: Create a random file that you want to ignore, for example <code>random-file.docx</code>.</li>
-<li>All macOS users: Let your repository ignore <code>.DS_Store</code></li>
-</ul></li>
-<li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Commit <code>.gitkeep</code> in an otherwise empty directory</li>
+<li>You created a new branch and merged changes to your main branch</li>
+<li>You created and resolved a merge conflict</li>
 </ol>
 <p>Please keep the <code>recipes</code> folder! We will continue to use it in the following sessions.</p>
 </section>
-<section id="learning-objectives" class="level2">
-<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
-<p><span class="emoji" data-emoji="bulb">💡</span> You can initialize a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> You can stage and commit changes<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories</p>
+<section id="exercises" class="level2">
+<h2 data-anchor-id="exercises">Exercises</h2>
+<section id="create-and-merge-a-branch" class="level3">
+<h3 data-anchor-id="create-and-merge-a-branch">1. Create and merge a branch</h3>
+<ol type="1">
+<li>Create a new branch called <code>feature</code>.</li>
+<li>Switch to the new branch.</li>
+<li>Add a new recipe to your <code>recipes.txt</code> file.</li>
+<li>Stage and commit the changes to your <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
+<li>Switch back to the default branch (<code>main</code> or <code>master</code>).</li>
+<li>Merge the <code>feature</code> branch with your default branch.</li>
+<li>Delete the <code>feature</code> branch.</li>
+</ol>
+</section>
+<section id="create-and-resolve-a-merge-conflict" class="level3">
+<h3 data-anchor-id="create-and-resolve-a-merge-conflict">2. Create and resolve a merge conflict</h3>
+<ol type="1">
+<li>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found in <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html#example-merge-conflict">the Version Control Book chapter</a>.</li>
+<li>Resolve the merge conflict.</li>
+<li>Delete the feature branch afterwards.</li>
+</ol>
+</section>
 </section>
 <section id="slides" class="level2">
 <h2 data-anchor-id="slides">Slides</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="How can I download the slides as PDF?">
+<div class="callout callout-style-simple callout-note callout-titled" title="How can I download the slides as a PDF file?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How can I download the slides as PDF?
+How can I download the slides as a PDF file?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -233,6 +263,55 @@ How can I download the slides as PDF?
 </div>
 </div>
 <iframe width="100%" height="500" src="slides_session04.html"></iframe>
+</section>
+<section id="cheatsheet" class="level2">
+<h2 data-anchor-id="cheatsheet">Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git branch</code></td>
+<td style="text-align: left;">Lists / creates and deletes branches</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git switch</code></td>
+<td style="text-align: left;">Switches between branches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git checkout</code></td>
+<td style="text-align: left;">Switches between branches</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git merge</code></td>
+<td style="text-align: left;">Merges branches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git merge --abort</code></td>
+<td style="text-align: left;">Aborts a merge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git merge --squash</code></td>
+<td style="text-align: left;">Squaches commits on branch into a single commit and merge</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git branch -d feature</code></td>
+<td style="text-align: left;">Deletes the <code>feature</code> branch</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 

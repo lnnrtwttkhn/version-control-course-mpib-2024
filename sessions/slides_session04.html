@@ -13,8 +13,7 @@
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="dcterms.date" content="2024-04-29">
-  <title>Version Control with Git - Session 4: Basic Git workflow</title>
+  <title>Version Control with Git - Session 4: Branches</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,71 +31,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -396,8 +330,9 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Session 4: Basic Git workflow</h1>
-  <p class="subtitle"></p><p>Track, organize and share your work: An introduction to Git for research</p>
+  <h1 class="title">Session 4: Branches</h1>
+  <p class="subtitle"></p><p><strong>Track, organize and share your work: An introduction to Git for research</strong></p>
+<p>Course at Max Planck Institute for Human Development</p>
 <p><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024"><i class="fa-solid fa-display" aria-label="display"></i> Slides</a> | <a href="https://github.com/lnnrtwttkhn/version-control-course-mpib-2024"><i class="fa-brands fa-github" aria-label="github"></i> Source</a></p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img data-src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg" alt="License: CC BY 4.0"></a> <a href="https://doi.org/10.25592/uhhfdm.14149"><img data-src="https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg" alt="DOI"></a></p><p></p>
 
@@ -407,261 +342,29 @@
 <a href="https://lennartwittkuhn.com/">Dr.&nbsp;Lennart Wittkuhn</a> <a href="https://orcid.org/0000-0003-2966-6888" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
-<a href="mailto:lennart.wittkuhn@uni-hamburg.de">lennart.wittkuhn@uni-hamburg.de</a>
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:konrad.pagenstedt@uni-hamburg.de">konrad.pagenstedt@uni-hamburg.de</a>
+<a href="mailto:lennart.wittkuhn@tutanota.com">lennart.wittkuhn@tutanota.com</a>
 </div>
 </div>
 </div>
 
-  <p class="date">April 29, 2024</p>
+  <p class="date">10:00</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Agenda</h2>
 <ul>
-<li><a href="#/admin" id="/toc-admin"><span class="header-section-number">1</span> Admin</a></li>
-<li><a href="#/last-week-setup-and-first-steps-with-git" id="/toc-last-week-setup-and-first-steps-with-git"><span class="header-section-number">2</span> Last week: Setup and first steps with Git</a></li>
-<li><a href="#/live-demonstrations" id="/toc-live-demonstrations"><span class="header-section-number">3</span> Live demonstrations</a></li>
-<li><a href="#/this-week" id="/toc-this-week"><span class="header-section-number">4</span> This week</a></li>
+<li><a href="#/last-session-setup-first-steps-with-git" id="/toc-last-session-setup-first-steps-with-git"><span class="header-section-number">1</span> Last session: Setup &amp; First steps with Git</a></li>
+<li><a href="#/this-session-meta-session-title" id="/toc-this-session-meta-session-title"><span class="header-section-number">2</span> This session: Branches</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="admin" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Admin</h1>
+<section id="last-session-setup-first-steps-with-git" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Last session: Setup &amp; First steps with Git</h1>
 
 </section>
-<section id="fa-circle-question-how-can-i-download-the-slides-as-pdf" class="slide level2">
-<h2><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> How can I download the slides as PDF?</h2>
-<p>Instructions can now be found above the slides on the course website:</p>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>How can I download the slides as PDF?</strong></p>
-</div>
-<div class="callout-content">
-<p>To print the slides to PDF, do the following:</p>
-<ol type="1">
-<li>Toggle into Print View using the <kbd>E</kbd> key (or using the <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#navigation-menu">Navigation Menu</a>).</li>
-<li>Open the in-browser print dialog (CTRL/CMD+P).</li>
-<li>Change the <strong>Destination</strong> setting to <strong>Save as PDF</strong>.</li>
-<li>Change the <strong>Layout</strong> to <strong>Landscape</strong>.</li>
-<li>Change the <strong>Margins</strong> to <strong>None</strong>.</li>
-<li>Enable the <strong>Background graphics</strong> option.</li>
-<li>Click <strong>Save</strong>.</li>
-</ol>
-<p>Note: This feature has been confirmed to work in <a href="https://google.com/chrome">Google Chrome</a>, <a href="https://www.chromium.org/Home">Chromium</a> as well as in <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a>.</p>
-<p>Here’s what the Chrome print dialog would look like with these settings enabled:</p>
-<p><img data-src="../images/print-to-pdf.png" class="border" alt="Screenshot of Chrome print dialog with the first slide/page of 43 shown on the left, and print options on the right. The Destination print option has Save as PDF selected."></p>
-<p>These instructions were copied from the <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf">Quarto documentation</a> (<a href="https://opensource.org/license/mit/">MIT License</a>) and slightly modified.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="fa-circle-question-when-do-i-have-to-take-the-quiz" class="slide level2">
-<h2><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> When do I have to “Take the quiz”?</h2>
-<ul>
-<li>Many chapters contain a “Take the quiz!” button</li>
-<li>These are the same quizzes that we assign to your as part of the sessions’ learning objectives</li>
-<li>TL;DR: Take the quiz when we tell you</li>
-</ul>
-<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html</a></p>
-<iframe width="100%" height="60%" src="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html" style="border:2px solid black;" title="Version Control Book"></iframe>
-</section>
-<section id="fa-circle-question-will-we-also-learn-about-python-or-r" class="slide level2">
-<h2><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> Will we also learn about Python or R?</h2>
-<ul>
-<li>No, not directly, but you are free to use Git to track Python or R files that you use for other projects</li>
-<li>We will have a <a href="https://quarto.org/">Quarto</a> workshop in two weeks:</li>
-</ul>
-<iframe width="100%" height="75%" src="https://quarto.org/" style="border:2px solid black;" title="Quarto website"></iframe>
-</section>
-<section id="more-questions-from-last-week" class="slide level2">
-<h2>More questions from last week</h2>
-<div class="fragment">
-<!-- -->
-<h4 id="fa-circle-question-where-can-i-find-an-overview-of-all-the-commands-we-learned-about"><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> <em>“Where can I find an overview of all the commands we learned about?”</em></h4>
-<p>See the <strong>Cheatsheet</strong> section at the end of each chapter in the Version Control Book.</p>
-</div>
-<div class="fragment">
-<!-- -->
-<h4 id="fa-circle-question-how-can-i-enable-copy-paste-in-git-bash"><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> <em>“How can I enable copy-paste in Git Bash?”</em></h4>
-<ol type="1">
-<li>Click on the Git Bash icon in the top-left corner.</li>
-<li>Choose <strong>Options</strong>.</li>
-<li>Go to <strong>Keys menu</strong>.</li>
-<li>Enable Copy and Paste (Ctrl/Shift + Ins) option.</li>
-<li>Click <strong>Apply and Save</strong>.</li>
-</ol>
-</div>
-<div class="fragment">
-<!-- -->
-<h4 id="fa-circle-question-how-do-i-find-the-users-folder-on-windows"><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> <em>“How do I find the <code>Users</code> folder on Windows?”</em></h4>
-<ul>
-<li>Use <code>~</code></li>
-<li>If <code>pwd</code> is at <code>/:</code> you can still use <code>cd C:</code></li>
-</ul>
-</div>
-<div class="fragment">
-<!-- -->
-<h4 id="fa-circle-question-what-should-my-recipes-folder-look-like"><i class="fa-solid fa-circle-question" aria-label="circle-question"></i> <em>“What should my <code>recipes</code> folder look like?”</em></h4>
-<p>At least, a folder with <code>recipes.txt</code> inside with at least one commit.</p>
-</div>
-</section></section>
-<section>
-<section id="last-week-setup-and-first-steps-with-git" class="title-slide slide level1 center" data-number="2">
-<h1><span class="header-section-number">2</span> Last week: Setup and first steps with Git</h1>
-
-</section>
-<section id="schedule" class="slide level2">
-<h2>Schedule</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">No</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Title</th>
-<th style="text-align: left;">Contents</th>
-<th style="text-align: left;">Reading</th>
-<th style="text-align: left;">Survey/Quiz</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">2024-04-08</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session01">Introduction to version control</a></strong></td>
-<td style="text-align: left;">Organisational matters<br>Overview of seminar sessions<br>Introduction to version control<br>Introduction to Git and its advantages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Intro to version control</a></td>
-<td style="text-align: left;"><a href="https://version-control-intro.formr.org">Course introduction Survey</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">2024-04-15</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session02">Command line</a></strong></td>
-<td style="text-align: left;">File Systems<br>Benefits of the Command Line<br>Basic Command Line commands</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/command-line.html">Command Line</a></td>
-<td style="text-align: left;"><a href="https://version-control-cli.formr.org">Command Line Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">2024-04-22</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session03">Setup + Git Fundamentals</a></strong></td>
-<td style="text-align: left;">Installation and configuration of Git<br>Initializing a Git repository<br>Basic Git commands</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html">Installation</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">Setup</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-installation.formr.org">Installation Survey</a>, <a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">2024-04-29</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session04">Basic Git workflow</a></strong></td>
-<td style="text-align: left;">Practicing basic Git commands<br>Ignoring files with .gitignore<br>Good commit messages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2024-05-06</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session05">Git Branching and Merging</a></strong></td>
-<td style="text-align: left;">Understanding branches in Git<br>Creating and switching between branches<br>Merging branches<br>Resolving merge conflicts</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">Branches</a></td>
-<td style="text-align: left;"><a href="https://version-control-branches.formr.org">Git Branches Quiz</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">2024-05-13</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session06">Quarto Workshop</a></strong></td>
-<td style="text-align: left;">Introduction to <a href="https://quarto.org">Quarto</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">2024-05-20</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session07">Whit Monday</a></strong></td>
-<td style="text-align: left;">Cancelled</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">2024-05-27</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session08">Introduction to GitHub</a></strong></td>
-<td style="text-align: left;">Introduction to remote repositories<br>Creating a GitHub account<br>Creating and managing repositories on GitHub<br>Pushing and pulling changes</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a></td>
-<td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">2024-06-03</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session09">GitHub with collaborators</a></strong></td>
-<td style="text-align: left;">Cloning a remote repository<br>Branching and merging in a collaborative environment<br>Pull Requests<br>GitHub Issues<br>Graphical User Interfaces (GUIs), e.g., GitKraken</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
-<td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">2024-06-10</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session10">GitHub with the world</a></strong></td>
-<td style="text-align: left;">Forking a remote repository <br>README files<br>Project Management</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
-<td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">2024-06-17</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session11">Publishing</a></strong></td>
-<td style="text-align: left;">Creating Tags with Git<br>Creating Releases with GitHub<br>Using <a href="https://zenodo.org">Zenodo</a> for scientific publishing<br>Licences<br>Citation Files</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/tags-and-releases.html">Tags and Releases</a></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">2024-06-24</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session12">Repetition and Practice</a></strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">2024-07-01</td>
-<td style="text-align: left;"><strong>Repetition and Practice</strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">2024-07-08</td>
-<td style="text-align: left;"><strong>Summary &amp; Wrap-Up</strong></td>
-<td style="text-align: left;">Summary &amp; Wrap-Up</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="last-week-setup-and-first-steps-with-git-1" class="slide level2">
-<h2>Last week: Setup and first steps with Git</h2>
-<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html</a></p>
-<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html" title="Version Control Book"></iframe>
-</section>
-<section id="last-and-this-weeks-learning-objectives" class="slide level2">
-<h2>Last and this week’s learning objectives</h2>
+<section id="last-session-learning-objectives" class="slide level2">
+<h2>Last session: Learning objectives</h2>
+<p>After the last session, you should now be able to answer the following questions / do the following:</p>
 <div class="fragment">
 <!-- -->
 <h3 id="setup">Setup</h3>
@@ -672,145 +375,141 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <h3 id="first-steps-with-git">First steps with Git</h3>
 <p><span class="emoji" data-emoji="bulb">💡</span> You can initialize a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> You can stage and commit changes<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories</p>
 </div>
-<div class="fragment">
-<p>Note: These are the learning objectives for this and next week.</p>
-</div>
 </section>
-<section id="staging-and-committing" class="slide level2">
-<h2>Staging and Committing</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="staging">Staging:</h3>
-<ul>
-<li>Command: <code>git add</code></li>
-<li>Purpose: Preparing and organizing files before they are recorded in the repository’s history.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="committing">Committing:</h3>
-<ul>
-<li>Command: <code>git commit -m "commit message"</code></li>
-<li>Purpose: Saving the changes in the staged files to the repository’s history, creating a snapshot.</li>
-</ul>
-</div>
-</div>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/git-staging-diagram.png" width="500"></p>
-<figcaption>Source: <a href="https://git-scm.com/book/en/v2">git-scm.com</a></figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="git-log" class="slide level2">
-<h2><code>git log</code></h2>
-<div class="fragment">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>e.g:</p>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="ex">commit</span> 3f6db14ed93d6e92a207a9a3ac5f8b8c5c5c5c34 <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main, origin/master, origin/HEAD<span class="kw">)</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="ex">Author:</span> Jane Doe <span class="op">&lt;</span>jane@example.com<span class="op">&gt;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="ex">Date:</span>   Tue Apr 24 14:24:48 2024 <span class="at">-0700</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="ex">Fix</span> the widget rendering issue in the dashboard</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="ex">commit</span> a4324f44d3e85723a4d91cb9e07132b7115e4941</span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="ex">Author:</span> John Smith <span class="op">&lt;</span>john@example.com<span class="op">&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="ex">Date:</span>   Mon Apr 23 16:17:59 2024 <span class="at">-0700</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a>    <span class="ex">Update</span> dependencies to newer versions</span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="ex">commit</span> fa204b9145bf7fc7ff226a26b49a567fc2eb1b94</span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="ex">Author:</span> Alice Johnson <span class="op">&lt;</span>alice@example.com<span class="op">&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="ex">Date:</span>   Sun Apr 22 15:08:43 2024 <span class="at">-0700</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a>    <span class="ex">Initial</span> commit of project files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">commit</span> b9690b287bdfec6e17af39b7337b84e9ebf6f046</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">Author:</span> Lennart Wittkuhn <span class="op">&lt;</span>lennart.wittkuhn@tutanota.com<span class="op">&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="ex">Date:</span>   Fri Mar 22 15:19:43 2024 +0100</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="ex">move</span> illustration of bad git commits <span class="er">(</span><span class="ex">xkcd</span> comic<span class="kw">)</span> <span class="ex">and</span> edit sentence</span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="ex">commit</span> d8d770dd84cd19086f41d8d38752b223c8130859</span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="ex">Author:</span> konradpa <span class="op">&lt;</span>konrad@pagenstedt.de<span class="op">&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="ex">Date:</span>   Wed Mar 6 13:51:13 2024 +0100</span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a>    <span class="ex">add</span> image to setup chapter</span>
-<span id="cb3-13"><a href="#cb3-13"></a></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="ex">commit</span> 074c9f6e12dd5fc8cc61de9f31efbdbce41a7583</span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="ex">Author:</span> konradpa <span class="op">&lt;</span>konrad@pagenstedt.de<span class="op">&gt;</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="ex">Date:</span>   Wed Mar 6 13:51:07 2024 +0100</span>
-<span id="cb3-17"><a href="#cb3-17"></a></span>
-<span id="cb3-18"><a href="#cb3-18"></a>    <span class="ex">add</span> image to rewriting history chapter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="terminology-what-are-branches" class="slide level2">
-<h2>Terminology: What are “branches”?</h2>
-<p>See next week!</p>
-<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">lennartwittkuhn.com/version-control-book/chapters/branches.html</a></p>
-<iframe width="100%" height="75%" src="https://lennartwittkuhn.com/version-control-book/chapters/branches.html" title="Version Control Book"></iframe>
-</section>
-<section id="terminology-what-is-head" class="slide level2">
-<h2>Terminology: What is <code>HEAD</code>?</h2>
-<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html#head">lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html#head</a></p>
-<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html#head" title="Version Control Book"></iframe>
+<section id="last-session-recipes-project" class="slide level2">
+<h2>Last session: <code>recipes</code> project</h2>
+<p>At the end of this session, you should have accomplished the following:</p>
+<ol type="1">
+<li>You set up Git.</li>
+<li>You initialized your <code>recipes</code> folder as a Git repository.</li>
+<li>You committed your first recipe to the <code>recipes</code> repository.</li>
+</ol>
+<p>Please keep the <code>recipes</code> folder! We will continue to use it in the following sessions.</p>
 </section></section>
-<section id="live-demonstrations" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> Live demonstrations</h1>
-
-</section>
-
 <section>
-<section id="this-week" class="title-slide slide level1 center" data-number="4">
-<h1><span class="header-section-number">4</span> This week</h1>
+<section id="this-session-meta-session-title" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> This session: Branches</h1>
 
 </section>
-<section id="todays-chapter" class="slide level2">
-<h2>Today’s chapter</h2>
-<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html</a></p>
-<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html#logging-commits" title="Version Control Book"></iframe>
+<section id="meta-session-title" class="slide level2">
+<h2>Branches</h2>
+
+<img data-src="../images/turing-way-branches.png" class="r-stretch quarto-figure-center"><p class="caption">Figure&nbsp;1: Image from <a href="https://book.the-turing-way.org/reproducible-research/vcs/vcs-git-branches.html">Chapter “Git Branches”</a> of the <a href="https://book.the-turing-way.org/">“The Turing Way handbook to reproducible, ethical and collaborative data science”</a>, used under a <a href="https://github.com/the-turing-way/the-turing-way/blob/main/LICENSE.md">Creative Commons Attribution 4.0 License</a>.</p></section>
+<section id="reading" class="slide level2">
+<h2>Reading</h2>
+<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">https://lennartwittkuhn.com/version-control-book/chapters/branches.html</a></p>
+<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-book/chapters/branches.html"></iframe>
+<aside class="notes">
+<p><strong>Illustration of branches in a Git repository.</strong> Each circle represents a commit. Commits on the <code>Main</code> branch are shown in gray. The branch <code>Feature A</code> (blue circles) was created from the <code>Main</code> branch and later merged again. In-between, another branch <code>Feature A-1</code> was created from the <code>Feature A</code> branch (green circles) and merged with that branch again before the <code>Feature A</code> branch was eventually merged with the <code>Main</code> branch. The branch <code>Feature B</code> was created but abandoned and not merged with the <code>Main</code> branch.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="your-turn" class="slide level2">
-<h2>Your turn</h2>
-<div>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
+<p><span class="emoji" data-emoji="bulb">💡</span> You understand the purpose and benefits of using branches in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can create and switch between branches<br> <span class="emoji" data-emoji="bulb">💡</span> You can merge branches and resolve merge conflicts<br> <span class="emoji" data-emoji="bulb">💡</span> You can name at least three best practices when working with branches<br></p>
+</section>
+<section id="cheatsheet" class="slide level2">
+<h2>Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git branch</code></td>
+<td style="text-align: left;">Lists / creates and deletes branches</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git switch</code></td>
+<td style="text-align: left;">Switches between branches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git checkout</code></td>
+<td style="text-align: left;">Switches between branches</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git merge</code></td>
+<td style="text-align: left;">Merges branches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git merge --abort</code></td>
+<td style="text-align: left;">Aborts a merge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git merge --squash</code></td>
+<td style="text-align: left;">Squaches commits on branch into a single commit and merge</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git branch -d feature</code></td>
+<td style="text-align: left;">Deletes the <code>feature</code> branch</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="tasks" class="slide level2">
+<h2>Tasks</h2>
+<p>In this session, you will work on the following tasks:</p>
 <ol type="1">
-<li class="fragment"><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Content Review</strong>: Read the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">“First steps with Git”</a> in the Version Control Book. Start at “Logging commits”</li>
-<li class="fragment"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Implementation</strong>: Try out the commands in the chapter! Play around! Have fun!</li>
-<li class="fragment"><i class="fa-solid fa-dumbbell" aria-label="dumbbell"></i> <strong>Exercises</strong>: Complete the implementation exercises (see below).</li>
-<li class="fragment"><i class="fa-solid fa-lightbulb" aria-label="lightbulb"></i> <strong>Quiz</strong>: Complete the <a href="https://version-control-basics.formr.org/">online quiz</a>.</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading</strong>: Read the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">“Branches”</a> in the Version Control Book.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Implementation</strong>: Try out the commands in the chapter.</li>
+<li><i class="fa-solid fa-list-check" aria-label="list-check"></i> <strong>Exercises</strong>: Work on the <a href="#/exercises">exercises</a> for the <a href="#/recipes-project"><code>recipes</code> project</a>.</li>
+<li><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i> <strong>Quiz</strong>: Test your knowledge with the <a href="https://version-control-branches.formr.org/">quiz</a>.</li>
 </ol>
-</div>
-<div class="fragment">
-<!-- -->
-<h3 id="implementation-exercises">Implementation Exercises</h3>
+<p>As always:</p>
 <ol type="1">
-<li>Commit at least three changes in <code>recipes.txt</code>.</li>
-<li>Make at least one commit using <code>git commit --amend</code>.
-<ul>
-<li>For example, add a recipe without a title first, commit, then add a title and use <code>git commit --amend</code> to add the title change to the same commit.</li>
-</ul></li>
-<li>Create a <code>.gitignore</code> file
-<ul>
-<li>Everyone: Create a random file that you want to ignore, for example <code>random-file.docx</code>.</li>
-<li>All macOS users: Let your repository ignore <code>.DS_Store</code></li>
-</ul></li>
-<li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Commit <code>.gitkeep</code> in an otherwise empty directory</li>
+<li>Try out the commands of this session and play around with them.</li>
+<li>Check whether you have achieved the <a href="#/learning-objectives">learning objectives</a>.</li>
+<li>Ask questions!</li>
+<li>Let’s <em>git</em> started!</li>
 </ol>
-</div>
-<div class="fragment">
-<p>Ask questions!</p>
-<p>Let’s <em>git</em> started!</p>
-</div>
+</section>
+<section id="recipes-project" class="slide level2">
+<h2><code>recipes</code> project</h2>
+<p>At the end of this session, you should have accomplished the following:</p>
+<ol type="1">
+<li>You created a new branch and merged changes to your main branch</li>
+<li>You created and resolved a merge conflict</li>
+</ol>
+<p>Please keep the <code>recipes</code> folder! We will continue to use it in the following sessions.</p>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<h3 id="create-and-merge-a-branch">1. Create and merge a branch</h3>
+<ol type="1">
+<li>Create a new branch called <code>feature</code>.</li>
+<li>Switch to the new branch.</li>
+<li>Add a new recipe to your <code>recipes.txt</code> file.</li>
+<li>Stage and commit the changes to your <code>recipes.txt</code> file on the <code>feature</code> branch.</li>
+<li>Switch back to the default branch (<code>main</code> or <code>master</code>).</li>
+<li>Merge the <code>feature</code> branch with your default branch.</li>
+<li>Delete the <code>feature</code> branch.</li>
+</ol>
+<h3 id="create-and-resolve-a-merge-conflict">2. Create and resolve a merge conflict</h3>
+<ol type="1">
+<li>Deliberately create a merge conflict by editing the same section of a file on two separate branches and attempting to merge them. An example can be found in <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html#example-merge-conflict">the Version Control Book chapter</a>.</li>
+<li>Resolve the merge conflict.</li>
+<li>Delete the feature branch afterwards.</li>
+</ol>
 
 <div class="footer footer-default">
 <p>Version Control Course</p>

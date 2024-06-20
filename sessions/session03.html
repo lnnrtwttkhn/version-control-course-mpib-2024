@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-04-22">
 
-<title>Version Control with Git - First steps with Git</title>
+<title>Version Control with Git - Setup &amp; First steps with Git</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,6 +85,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-clipboard-list" aria-label="clipboard-list"></i> Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sessions/index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-list-ol" aria-label="list-ol"></i> Sessions</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../code-of-conduct.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-handshake" aria-label="handshake"></i> Code of Conduct</span></a>
   </li>  
@@ -118,10 +125,24 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#this-session" id="toc-this-session" class="nav-link active" data-scroll-target="#this-session">This session</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a>
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#first-steps-with-git" id="toc-first-steps-with-git" class="nav-link" data-scroll-target="#first-steps-with-git">First steps with Git</a></li>
+  </ul></li>
   <li><a href="#recipes-project" id="toc-recipes-project" class="nav-link" data-scroll-target="#recipes-project"><code>recipes</code> project</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul>
+  <li><a href="#setup-1" id="toc-setup-1" class="nav-link" data-scroll-target="#setup-1">Setup</a></li>
+  <li><a href="#first-steps-with-git-1" id="toc-first-steps-with-git-1" class="nav-link" data-scroll-target="#first-steps-with-git-1">First steps with Git</a></li>
+  <li><a href="#basic-git-workflow" id="toc-basic-git-workflow" class="nav-link" data-scroll-target="#basic-git-workflow">Basic Git workflow</a></li>
+  </ul></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#email" id="toc-email" class="nav-link" data-scroll-target="#email">Email</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet">Cheatsheet</a>
+  <ul>
+  <li><a href="#setup-2" id="toc-setup-2" class="nav-link" data-scroll-target="#setup-2">Setup</a></li>
+  <li><a href="#first-steps-with-git-2" id="toc-first-steps-with-git-2" class="nav-link" data-scroll-target="#first-steps-with-git-2">First steps with Git</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -135,25 +156,21 @@ ul.task-list li input[type="checkbox"] {
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">First steps with Git</h1>
+<h1 class="title">Setup &amp; First steps with Git</h1>
 <p class="subtitle lead">Session 03</p>
 </div>
 <div class="quarto-title-meta">
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Starts at:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 22, 2024</p>
+      <p class="date">09:00</p>
     </div>
   </div>
   </div>
 </header> <div class="about-links">
-  <a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/slides_session03.html" class="about-link" rel="" target="">
+  <a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session03.html" class="about-link" rel="" target="">
     <i class="bi bi-display"></i>
      <span class="about-link-text">Slides</span>
-  </a>
-  <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html" class="about-link" rel="" target="">
-    <i class="bi bi-book"></i>
-     <span class="about-link-text">Chapter: Installation</span>
   </a>
   <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html" class="about-link" rel="" target="">
     <i class="bi bi-book"></i>
@@ -163,9 +180,9 @@ ul.task-list li input[type="checkbox"] {
     <i class="bi bi-book"></i>
      <span class="about-link-text">Chapter: First steps with Git</span>
   </a>
-  <a href="https://version-control-installation.formr.org" class="about-link" rel="" target="">
+  <a href="https://version-control-basics.formr.org/" class="about-link" rel="" target="">
     <i class="bi bi-input-cursor-text"></i>
-     <span class="about-link-text">Survey: Installation</span>
+     <span class="about-link-text">Survey: Git Basics</span>
   </a>
 </div>
       <div class="about-contents"><div id="hero-heading">
@@ -176,16 +193,31 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="this-session" class="level2">
 <h2 data-anchor-id="this-session">This session</h2>
-<p>In this session, you will complete the following tasks:</p>
+<p>In this session, you will work on the following tasks:</p>
 <ol type="1">
-<li>Read the chapters <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">“Setup”</a> and <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">“First steps with Git”</a> in the Version Control Book.</li>
-<li>Complete the exercises for the <a href="#recipes-project"><code>recipes</code> project</a> in the <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">“Setup” chapter</a> and <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">“First steps with Git” chapter</a> in the Version Control Book</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading</strong>: Read the chapters <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">“Setup”</a> and <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">“First steps with Git”</a> in the Version Control Book.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Implementation</strong>: Try out the commands in the chapter.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Exercises</strong>: Work on the <a href="#exercises">exercises</a> for the <a href="#recipes-project"><code>recipes</code> project</a>.</li>
+<li><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i> <strong>Quiz</strong>: Test your knowledge with the <a href="https://version-control-basics.formr.org/">quiz</a>.</li>
 </ol>
 <p>As always:</p>
 <ol type="1">
-<li>Try out the commands in the chapters and play around with them.</li>
+<li>Try out the commands of this session and play around with them.</li>
 <li>Check whether you have achieved the <a href="#learning-objectives">learning objectives</a>.</li>
+<li>Ask questions!</li>
+<li>Let’s <em>git</em> started!</li>
 </ol>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
+<section id="setup" class="level3">
+<h3 data-anchor-id="setup">Setup</h3>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know how to set up Git for the first time<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up Git on your computer<br> <span class="emoji" data-emoji="bulb">💡</span> You understand the difference between the three Git configuration levels<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to configure your username and email address in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up your preferred text editor when working with Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can escape the command-line text editor Vim</p>
+</section>
+<section id="first-steps-with-git" class="level3">
+<h3 data-anchor-id="first-steps-with-git">First steps with Git</h3>
+<p><span class="emoji" data-emoji="bulb">💡</span> You can initialize a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> You can stage and commit changes<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories</p>
+</section>
 </section>
 <section id="recipes-project" class="level2">
 <h2 data-anchor-id="recipes-project"><code>recipes</code> project</h2>
@@ -197,20 +229,52 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Please keep the <code>recipes</code> folder! We will continue to use it in the following sessions.</p>
 </section>
-<section id="learning-objectives" class="level2">
-<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
-<p><span class="emoji" data-emoji="bulb">💡</span> You know how to set up Git for the first time<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up Git on your computer<br> <span class="emoji" data-emoji="bulb">💡</span> You understand the difference between the three Git configuration levels<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to configure your username and email address in Git<br> <span class="emoji" data-emoji="bulb">💡</span> You have set up your preferred text editor when working with Git<br> <span class="emoji" data-emoji="bulb">💡</span> You can escape the command-line text editor Vim</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> You can initialize a Git repository<br> <span class="emoji" data-emoji="bulb">💡</span> You can stage and commit changes<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to explore the commit history<br> <span class="emoji" data-emoji="bulb">💡</span> You can compare different commits<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to use and create a <code>.gitignore</code> file<br> <span class="emoji" data-emoji="bulb">💡</span> You can discuss which files can (not) be tracked well with Git and why<br> <span class="emoji" data-emoji="bulb">💡</span> You know how to track empty folders in Git repositories</p>
+<section id="exercises" class="level2">
+<h2 data-anchor-id="exercises">Exercises</h2>
+<section id="setup-1" class="level3">
+<h3 data-anchor-id="setup-1">Setup</h3>
+<ol type="1">
+<li>Set your Git username and email address.</li>
+<li>Change the default name of the initial “branch” to <code>main</code>.</li>
+<li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Change your default text editor.</li>
+</ol>
+</section>
+<section id="first-steps-with-git-1" class="level3">
+<h3 data-anchor-id="first-steps-with-git-1">First steps with Git</h3>
+<ol type="1">
+<li>Create a <code>recipes</code> folder and turn it into a Git repository.</li>
+<li>Add a <em>short</em> recipe to <code>recipes.txt</code> (any favorite or an intriguing AI-generated one).</li>
+<li>Stage and commit your changes to the repository.</li>
+</ol>
+</section>
+<section id="basic-git-workflow" class="level3">
+<h3 data-anchor-id="basic-git-workflow">Basic Git workflow</h3>
+<ol type="1">
+<li>Commit at least three additional changes in <code>recipes.txt</code>.</li>
+<li>Create a <code>.gitignore</code> file
+<ul>
+<li>Everyone: Create a random file that you want to ignore, for example <code>random-file.docx</code>.</li>
+<li>Add the random file to the <code>.gitignore</code> file, stage and commit your changes.</li>
+<li>All macOS users: Let your repository ignore <code>.DS_Store</code>.</li>
+</ul></li>
+<li><span class="emoji" data-emoji="rocket">🚀</span> Make at least one commit using <code>git commit --amend</code>.
+<ul>
+<li>For example, add a recipe without a title first, commit, then add a title and use <code>git commit --amend</code> to add the title change to the same commit.</li>
+</ul></li>
+<li><span class="emoji" data-emoji="rocket">🚀</span> Optional: Commit <code>.gitkeep</code> in an otherwise empty directory</li>
+</ol>
+<p>Note: There are several terms in these instructions that might still be unfamiliar to you, for example “repository”, “stage” or “commit”. Don’t worry, you will learn about what these terms mean in the chapters.</p>
+</section>
 </section>
 <section id="slides" class="level2">
 <h2 data-anchor-id="slides">Slides</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="How can I download the slides as PDF?">
+<div class="callout callout-style-simple callout-note callout-titled" title="How can I download the slides as a PDF file?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How can I download the slides as PDF?
+How can I download the slides as a PDF file?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -235,29 +299,97 @@ How can I download the slides as PDF?
 </div>
 <iframe width="100%" height="500" src="slides_session03.html"></iframe>
 </section>
-<section id="email" class="level2">
-<h2 data-anchor-id="email">Email</h2>
-<p>Dear course participants,</p>
-<p>You are receiving this email because you are enrolled in the course “Track, organize and share your work: An introduction to Git for research”, which is taking place this summer semester at the University of Hamburg. This is one of the few occasions when we will ask you to complete additional tasks outside of class time.</p>
-<p>First, we hope that your initial explorations of the command line were intriguing and insightful. Regarding this session’s contents, we kindly ask you to complete the following tasks:</p>
-<ol type="1">
-<li>Finish reviewing the chapter about the command line and explore the various commands</li>
-<li>Complete the exercises/quiz questions in this online survey: <a href="https://version-control-cli.formr.org/" class="uri">https://version-control-cli.formr.org/</a></li>
-</ol>
-<p>We are very much looking forward to our next session on Monday when we will take our first steps in using Git! For this session, it is important that you verify whether Git is installed on your computer. To do this, we kindly ask you to complete the following tasks before our next meeting:</p>
-<ol type="1">
-<li>If you haven’t yet completed the installation, please install Git. The Version Control Book provides a chapter about “Installation” which should help you with the installation process: <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html" class="uri">https://lennartwittkuhn.com/version-control-book/chapters/installation.html</a> Send us an email if you encounter any problems during the installation process.</li>
-<li>Everyone: Please complete our (short) survey regarding the installation process: <a href="https://version-control-installation.formr.org" class="uri">https://version-control-installation.formr.org</a></li>
-</ol>
-<p>Please ensure that you complete the surveys before our next session, ideally by Sunday evening at the latest. This will give us enough time to review your responses before our session on Monday.</p>
-<p>Further information about the course can be found on our course website: <a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/" class="uri">https://lennartwittkuhn.com/version-control-course-uhh-ss24/</a></p>
-<p>If you encounter any issues or have any questions, please feel free to contact us directly via email.</p>
-<p>We are looking forward to seeing you for the next session on Monday!</p>
-<p>Best wishes,</p>
-<p>Lennart Wittkuhn (Instructor) &amp; Konrad Pagenstedt (Teaching Assistant)</p>
+<section id="cheatsheet" class="level2">
+<h2 data-anchor-id="cheatsheet">Cheatsheet</h2>
+<section id="setup-2" class="level3">
+<h3 data-anchor-id="setup-2">Setup</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git config</code></td>
+<td style="text-align: left;">Get an overview of Git config commands</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git config --global user.name</code></td>
+<td style="text-align: left;">Sets Git username</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git config --global user.email</code></td>
+<td style="text-align: left;">Sets Git email address</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git config --global core.editor</code></td>
+<td style="text-align: left;">Sets Git text editor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git config --global init.defaultBranch main</code></td>
+<td style="text-align: left;">Sets default branch name to <code>main</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git config --list</code></td>
+<td style="text-align: left;">Views set Git configurations</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="first-steps-with-git-2" class="level3">
+<h3 data-anchor-id="first-steps-with-git-2">First steps with Git</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git init</code></td>
+<td style="text-align: left;">Initializes a folder as Git repository</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git status</code></td>
+<td style="text-align: left;">Views Git tracking status of files in the repository</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git add</code></td>
+<td style="text-align: left;">Adds file(s) to the staging area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git commit</code></td>
+<td style="text-align: left;">Commits staged files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git log</code></td>
+<td style="text-align: left;">Views past commits</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git diff</code></td>
+<td style="text-align: left;">Views made changes compared to the last commit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

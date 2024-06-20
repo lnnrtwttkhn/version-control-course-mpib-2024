@@ -1,143 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/implementation.html</loc>
-    <lastmod>2024-06-19T08:44:39.497Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session02.html</loc>
-    <lastmod>2024-06-19T08:44:38.641Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session14.html</loc>
-    <lastmod>2024-06-19T08:44:35.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session04.html</loc>
-    <lastmod>2024-06-19T08:44:31.553Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session10.html</loc>
-    <lastmod>2024-06-19T08:44:25.201Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session_extraexercise.html</loc>
-    <lastmod>2024-06-19T08:44:21.361Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session11.html</loc>
-    <lastmod>2024-06-19T08:44:20.529Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session05.html</loc>
-    <lastmod>2024-06-19T08:44:16.821Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session10.html</loc>
-    <lastmod>2024-06-19T08:44:15.845Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session13.html</loc>
-    <lastmod>2024-06-19T08:44:14.681Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session09.html</loc>
-    <lastmod>2024-06-19T08:44:13.513Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session08.html</loc>
-    <lastmod>2024-06-19T08:44:05.661Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session05.html</loc>
-    <lastmod>2024-06-19T08:43:59.197Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session11.html</loc>
-    <lastmod>2024-06-19T08:43:55.293Z</lastmod>
-  </url>
-  <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/mechanics.html</loc>
-    <lastmod>2024-06-19T08:43:54.549Z</lastmod>
+    <lastmod>2024-06-20T22:32:07.087Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/acknowledgements.html</loc>
-    <lastmod>2024-06-19T08:43:51.181Z</lastmod>
+    <lastmod>2024-06-20T22:32:03.927Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/schedule.html</loc>
-    <lastmod>2024-06-19T08:43:44.685Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/about.html</loc>
-    <lastmod>2024-06-19T08:43:38.101Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/team.html</loc>
-    <lastmod>2024-06-19T08:43:41.525Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/resources.html</loc>
-    <lastmod>2024-06-19T08:43:48.313Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/index.html</loc>
-    <lastmod>2024-06-19T08:43:51.565Z</lastmod>
+    <lastmod>2024-06-20T22:31:58.359Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/code-of-conduct.html</loc>
-    <lastmod>2024-06-19T08:43:54.921Z</lastmod>
+    <lastmod>2024-06-20T22:31:55.115Z</lastmod>
   </url>
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session12.html</loc>
-    <lastmod>2024-06-19T08:43:55.665Z</lastmod>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/recipes/recipes-github-intro.html</loc>
+    <lastmod>2024-06-20T22:31:50.575Z</lastmod>
   </url>
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session02.html</loc>
-    <lastmod>2024-06-19T08:44:02.317Z</lastmod>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/recipes/recipes-basics.html</loc>
+    <lastmod>2024-06-20T22:31:45.467Z</lastmod>
   </url>
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session01.html</loc>
-    <lastmod>2024-06-19T08:44:10.181Z</lastmod>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/recipes/recipes-cli.html</loc>
+    <lastmod>2024-06-20T22:31:40.387Z</lastmod>
   </url>
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session14.html</loc>
-    <lastmod>2024-06-19T08:44:14.169Z</lastmod>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session05.html</loc>
+    <lastmod>2024-06-20T22:31:34.715Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-github-intro.html</loc>
+    <lastmod>2024-06-20T22:31:31.751Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-github-advanced.html</loc>
+    <lastmod>2024-06-20T22:31:26.551Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-tags-releases.html</loc>
+    <lastmod>2024-06-20T22:31:21.375Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/index.html</loc>
-    <lastmod>2024-06-19T08:44:15.353Z</lastmod>
+    <lastmod>2024-06-20T22:31:15.663Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session03.html</loc>
-    <lastmod>2024-06-19T08:44:16.369Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session01.html</loc>
-    <lastmod>2024-06-19T08:44:17.373Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session08.html</loc>
-    <lastmod>2024-06-19T08:44:20.937Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session09.html</loc>
-    <lastmod>2024-06-19T08:44:21.821Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session03.html</loc>
-    <lastmod>2024-06-19T08:44:28.261Z</lastmod>
+    <lastmod>2024-06-20T22:31:14.599Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session04.html</loc>
-    <lastmod>2024-06-19T08:44:32.053Z</lastmod>
+    <lastmod>2024-06-20T22:31:07.807Z</lastmod>
   </url>
   <url>
-    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session12.html</loc>
-    <lastmod>2024-06-19T08:44:38.169Z</lastmod>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session08.html</loc>
+    <lastmod>2024-06-20T22:31:01.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session03.html</loc>
+    <lastmod>2024-06-20T22:30:58.223Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session01.html</loc>
+    <lastmod>2024-06-20T22:30:51.531Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/tasks/tasks-intro.html</loc>
+    <lastmod>2024-06-20T22:30:47.019Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session07.html</loc>
+    <lastmod>2024-06-20T22:30:46.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/resources.html</loc>
+    <lastmod>2024-06-20T22:30:40.003Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/team.html</loc>
+    <lastmod>2024-06-20T22:30:43.203Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/tasks/tasks-template.html</loc>
+    <lastmod>2024-06-20T22:30:46.671Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session02.html</loc>
+    <lastmod>2024-06-20T22:30:50.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session07.html</loc>
+    <lastmod>2024-06-20T22:30:54.667Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session08.html</loc>
+    <lastmod>2024-06-20T22:31:01.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session04.html</loc>
+    <lastmod>2024-06-20T22:31:04.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session02.html</loc>
+    <lastmod>2024-06-20T22:31:11.263Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session_extraexercise.html</loc>
+    <lastmod>2024-06-20T22:31:15.023Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session06.html</loc>
+    <lastmod>2024-06-20T22:31:18.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-cli.html</loc>
+    <lastmod>2024-06-20T22:31:23.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-branches.html</loc>
+    <lastmod>2024-06-20T22:31:29.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/exercises/exercise-git-basics.html</loc>
+    <lastmod>2024-06-20T22:31:34.339Z</lastmod>
   </url>
   <url>
     <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session06.html</loc>
-    <lastmod>2024-06-19T08:44:39.101Z</lastmod>
+    <lastmod>2024-06-20T22:31:37.851Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/recipes/recipes-github-advanced.html</loc>
+    <lastmod>2024-06-20T22:31:42.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/recipes/recipes-branches.html</loc>
+    <lastmod>2024-06-20T22:31:48.011Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/slides_session01.html</loc>
+    <lastmod>2024-06-20T22:31:54.739Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/index.html</loc>
+    <lastmod>2024-06-20T22:31:55.511Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/about.html</loc>
+    <lastmod>2024-06-20T22:32:01.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lennartwittkuhn.com/version-control-course-mpib-2024/implementation.html</loc>
+    <lastmod>2024-06-20T22:32:04.287Z</lastmod>
   </url>
 </urlset>

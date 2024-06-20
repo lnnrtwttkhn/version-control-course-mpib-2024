@@ -13,8 +13,7 @@
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="dcterms.date" content="2024-04-08">
-  <title>Version Control with Git - Session 1: Introduction</title>
+  <title>Version Control with Git - Session 1: Welcome &amp; Introduction to Version Control</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -350,8 +349,9 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Session 1: Introduction</h1>
-  <p class="subtitle"></p><p>Track, organize and share your work: An introduction to Git for research</p>
+  <h1 class="title">Session 1: Welcome &amp; Introduction to Version Control</h1>
+  <p class="subtitle"></p><p><strong>Track, organize and share your work: An introduction to Git for research</strong></p>
+<p>Course at Max Planck Institute for Human Development</p>
 <p><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024"><i class="fa-solid fa-display" aria-label="display"></i> Slides</a> | <a href="https://github.com/lnnrtwttkhn/version-control-course-mpib-2024"><i class="fa-brands fa-github" aria-label="github"></i> Source</a></p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img data-src="https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg" alt="License: CC BY 4.0"></a> <a href="https://doi.org/10.25592/uhhfdm.14149"><img data-src="https://www.fdr.uni-hamburg.de/badge/DOI/10.25592/uhhfdm.14149.svg" alt="DOI"></a></p><p></p>
 
@@ -361,162 +361,67 @@
 <a href="https://lennartwittkuhn.com/">Dr.&nbsp;Lennart Wittkuhn</a> <a href="https://orcid.org/0000-0003-2966-6888" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
 </div>
 <div class="quarto-title-author-email">
-<a href="mailto:lennart.wittkuhn@uni-hamburg.de">lennart.wittkuhn@uni-hamburg.de</a>
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:konrad.pagenstedt@uni-hamburg.de">konrad.pagenstedt@uni-hamburg.de</a>
+<a href="mailto:lennart.wittkuhn@tutanota.com">lennart.wittkuhn@tutanota.com</a>
 </div>
 </div>
 </div>
 
-  <p class="date">April 8, 2024</p>
+  <p class="date">07:30</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Agenda</h2>
 <ul>
-<li><a href="#/logistics-and-admin" id="/toc-logistics-and-admin"><span class="header-section-number">1</span> Logistics and admin</a></li>
+<li><a href="#/logistics-admin" id="/toc-logistics-admin"><span class="header-section-number">1</span> Logistics &amp; Admin</a></li>
 <li><a href="#/survey-results" id="/toc-survey-results"><span class="header-section-number">2</span> Survey results</a></li>
-<li><a href="#/introduction-to-version-control" id="/toc-introduction-to-version-control"><span class="header-section-number">3</span> Introduction to version control</a></li>
+<li><a href="#/introduction-to-version-control" id="/toc-introduction-to-version-control"><span class="header-section-number">3</span> Introduction to Version Control</a></li>
+<li><a href="#/discussion" id="/toc-discussion"><span class="header-section-number">4</span> Discussion</a></li>
+<li><a href="#/outlook" id="/toc-outlook"><span class="header-section-number">5</span> Outlook</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="logistics-and-admin" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Logistics and admin</h1>
+<section id="logistics-admin" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Logistics &amp; Admin</h1>
 
 </section>
-<section id="team" class="slide level2">
-<h2>Team</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<h3 id="instructor">Instructor</h3>
-<p><img data-src="../images/photo-wittkuhn-uhh.jpg" style="width:89.0%" alt="A portrait photo of Lennart Wittkuhn."></p>
-<h4 id="dr.-lennart-wittkuhn">Dr.&nbsp;Lennart Wittkuhn</h4>
-<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:lennart.wittkuhn@tutanota.com">lennart.wittkuhn@tutanota.com</a><br> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/lnnrtwttkhn">GitHub</a> <i class="fa-solid fa-home-user" aria-label="home-user"></i> <a href="https://lennartwittkuhn.com/">lennartwittkuhn.com</a></p>
-</div><div class="column" style="width:35%;">
-<h3 id="teaching-assistant">Teaching Assistant</h3>
-<p><img data-src="../images/photo_pagenstedt_portrait.jpeg" alt="A portrait photo of Konrad Pagenstedt."></p>
-<h4 id="konrad-pagenstedt">Konrad Pagenstedt</h4>
-<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:konrad.pagenstedt@uni-hamburg.de">konrad.pagenstedt@uni-hamburg.de</a><br> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/konradpa">GitHub</a></p>
-</div>
-</div>
-</section>
-<section id="research-on-mechanisms-of-learning-change" class="slide level2">
-<h2>Research on “Mechanisms of Learning &amp; Change”</h2>
+<section id="about" class="slide level2">
+<h2>About</h2>
 <div class="fragment">
 <!-- -->
-<h4 id="how-does-the-brain-use-past-experience-to-guide-future-decisions">How does the brain use past experience to guide future decisions?</h4>
-<p><br></p>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/lake-learning.jpeg"></p>
-<figcaption>taken from <span class="citation" data-cites="lake2016">Lake et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span>: “Building machines that learn and think like people”</figcaption>
-</figure>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div class="fragment">
-<p><img data-src="../images/research-areas.png"></p>
-</div>
-</div>
+<h3 id="me">Me</h3>
+<p><span class="emoji" data-emoji="scientist">🧑‍🔬</span> <strong>Position:</strong> Postdoctoral Researcher &amp; Lab Manager at the <a href="https://www.psy.uni-hamburg.de/en.html">Institute of Psychology</a> at the <a href="https://www.psy.uni-hamburg.de/en/arbeitsbereiche/lern-und-veraenderungsmechanismen.html">University of Hamburg</a></p>
+<p><span class="emoji" data-emoji="mortar_board">🎓</span> <strong>Education:</strong> BSc Psychology &amp; MSc Cognitive Neuroscience (TU Dresden), PhD Cognitive Neuroscience (MPIB)</p>
+<p><span class="emoji" data-emoji="microscope">🔬</span> <strong>Research:</strong> I study the role of fast neural memory reactivation (“<a href="https://en.wikipedia.org/wiki/Hippocampal_replay">replay</a>”) in the human brain using fMRI</p>
+<p><span class="emoji" data-emoji="link">🔗</span> <strong>Contact:</strong> You can connect with me via <a href="mailto:lennart.wittkuhn@tutanota.com">email</a>, <a href="?var:twitter">Twitter</a>, <a href="?var:mastodon">Mastodon</a>, <a href="?var:github">GitHub</a> or <a href="?var:linkedin">LinkedIn</a></p>
+<p><span class="emoji" data-emoji="information_source">ℹ️</span> <strong>Info:</strong> Find out more about my work on <a href="?var:homepage">my website</a>, <a href="?var:scholar">Google Scholar</a> and <a href="?var:orcid-link">ORCiD</a></p>
 </div>
 <div class="fragment">
-<p>Find out more on our group’s website: <a href="https://schucklab.gitlab.io/" class="uri">https://schucklab.gitlab.io/</a></p>
-</div>
-<aside class="notes">
-<ul>
-<li>we heard a lot about artificial intelligence</li>
-<li>what does “intelligence” even mean?</li>
-<li>as psychologists &amp; cognitive neuroscientists we are interested in understanding human “natural” or biological intelligence</li>
-<li>our group is interested in the convergence between neuroscience and artificial intelligence research (“Neuro AI”)</li>
-<li>e.g., “why are humans so fast in learning a wide range of tasks in complex environments”</li>
-<li>we use cognitive and psychological approaches, neural measurement using fMRI and EEG and integrate and compare them with computational approaches from reinforcement learning and artificial neural networks</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="research-teaching-assistant-positions-thesis-projects" class="slide level2">
-<h2>Research / teaching assistant positions + thesis projects</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/git-logo-full.svg" style="width:85.0%"></p>
-<figcaption><a href="https://git-scm.com/">git-scm.com</a></figcaption>
-</figure>
-</div>
-<h3 id="version-control-course">Version Control Course</h3>
-<ul>
-<li><span class="emoji" data-emoji="notebook">📓</span> <strong>Tasks:</strong> Support our teaching project!</li>
-<li><span class="emoji" data-emoji="calendar">📆</span> <strong>Duration:</strong> flexible</li>
-<li><span class="emoji" data-emoji="clock1">🕐</span> <strong>Time:</strong> flexible</li>
-<li><span class="emoji" data-emoji="moneybag">💰</span> <strong>Salary:</strong> 12.00 € / hour (SHK) / 13.95 € / hour (WHK)</li>
-<li><span class="emoji" data-emoji="envelope">✉️</span> <strong>Contact:</strong> <a href="mailto:lennart.wittkuhn@tutanota.com">lennart.wittkuhn@tutanota.com</a></li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 55.6%;justify-content: center;">
-<p><img data-src="../images/mri.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 44.4%;justify-content: center;">
-<p><img data-src="../images/brain-anatomical.png"></p>
-</div>
-</div>
-</div>
-<h3 id="research-projects-in-our-group">Research projects in our group</h3>
-<ul>
-<li><span class="emoji" data-emoji="notebook">📓</span> <strong>Tasks:</strong> data collection &amp; analysis (e.g., fMRI)</li>
-<li><span class="emoji" data-emoji="calendar">📆</span> <strong>Duration:</strong> felxible</li>
-<li><span class="emoji" data-emoji="clock1">🕐</span> <strong>Time:</strong> flexible</li>
-<li><span class="emoji" data-emoji="moneybag">💰</span> <strong>Salary:</strong> 12.00 € / hour (SHK) / 13.95 € / hour (WHK)</li>
-<li><span class="emoji" data-emoji="envelope">✉️</span> <strong>Contact:</strong> <a href="mailto:sekretariat-luv.psych@uni-hamburg.de">sekretariat-luv.psych@uni-hamburg.de</a></li>
-</ul>
-</div>
-</div>
+<!-- -->
+<h3 id="this-presentation">This presentation</h3>
+<p><span class="emoji" data-emoji="computer">💻</span> <strong>Slides:</strong> Slides are publicly available at <a href="https://lennartwittkuhn.com/version-control-course-mpib-2024">https://lennartwittkuhn.com/version-control-course-mpib-2024</a></p>
+<p><span class="emoji" data-emoji="package">📦</span> <strong>Software:</strong> Reproducible slides built with <a href="https://quarto.org/">Quarto</a> and deployed to <a href="https://pages.github.com/">GitHub Pages</a> using <a href="https://github.com/features/actions">GitHub Actions</a></p>
+
+<!-- 
+:trackball: **DOI:** [10.5281/zenodo.5012476](http://doi.org/10.5281/zenodo.5012476) (generated using GitHub releases + Zenodo, see details [here](https://guides.github.com/activities/citable-code/))
+-->
+<p><i class="fa-brands fa-github" aria-label="github"></i> <strong>Source:</strong> Code is publicly available on GitHub at <a href="https://github.com/lnnrtwttkhn/version-control-course-mpib-2024">https://github.com/lnnrtwttkhn/version-control-course-mpib-2024</a></p>
+<p><span class="emoji" data-emoji="pray">🙏</span> <strong>Contact:</strong> I am happy for any feedback or suggestions via <a href="mailto:lennart.wittkuhn@tutanota.com">email</a> or <a href="?var:issues">GitHub issues</a>. Thank you!</p>
 </div>
 </section>
 <section id="who-are-you" class="slide level2">
 <h2>Who are you?</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 <ol type="1">
 <li>Your name?</li>
 <li>Your preferred pronouns?</li>
-<li><em>One</em> (fun) fact about you? For example:
-<ul>
-<li>What did you study before and where?</li>
-<li>What do you expect from this course?</li>
-<li>What’s your hobby?</li>
-<li>Do you have a pet?</li>
-<li>What’s your favorite color?</li>
-<li>Your mood on rubber duck scale?</li>
-</ul></li>
+<li>Your research group?</li>
+<li>Your research?</li>
+<li>Your mood on a sheep scale?</li>
 </ol>
-</div><div class="column" style="width:45%;">
+</div><div class="column" style="width:60%;">
 <div class="fragment">
-<p><img data-src="../images/mood-rubber-duck.png" alt="Mood on a rubber duck scale."></p>
+<p><img data-src="../images/mood-sheep.png" alt="Mood on a sheep scale."></p>
 </div>
 </div>
 </div>
@@ -528,50 +433,46 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <ul>
 <li><i class="fa-solid fa-calendar-days" aria-label="calendar-days"></i> <strong>Date:</strong> Friday, June 21st 2024</li>
 <li><i class="fa-solid fa-clock" aria-label="clock"></i> <strong>Time:</strong> 9:30 a.m. to 4:30 p.m. (6 hours)</li>
-<li><i class="fa-solid fa-building-columns" aria-label="building-columns"></i> <strong>Room:</strong> Lentzeallee 94, 14195 Berlin, Campus Open Space</li>
-<li><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> <strong>Instructor:</strong> <a href="https://lennartwittkuhn.com/">Dr.&nbsp;Lennart Wittkuhn</a></li>
-<li><i class="fa-solid fa-user-plus" aria-label="user-plus"></i> <strong>Assistant:</strong> <a href="mailto:konrad.pagenstedt@uni-hamburg.de">Konrad Pagenstedt</a></li>
+<li><i class="fa-solid fa-building-columns" aria-label="building-columns"></i> <strong>Room:</strong> Campus Open Space</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><i class="fa-solid fa-chalkboard" aria-label="chalkboard"></i> <strong>Event:</strong> Seminar</li>
-<li><i class="fa-solid fa-gem" aria-label="gem"></i> <strong>Credits:</strong> 4,0 (2 SWS)</li>
+<li><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> <strong>Instructor:</strong> <a href="https://lennartwittkuhn.com/">Dr.&nbsp;Lennart Wittkuhn</a></li>
+<li><i class="fa-solid fa-chalkboard" aria-label="chalkboard"></i> <strong>Event:</strong> Course</li>
 <li><i class="fa-solid fa-language" aria-label="language"></i> <strong>Language:</strong> English</li>
-<li><i class="fa-solid fa-tag" aria-label="tag"></i> <strong>Tag:</strong> <strong>?var:project.tag</strong></li>
 </ul>
 </div>
 </div>
 </section>
-<section id="what-will-the-average-seminar-session-look-like" class="slide level2">
-<h2>What will the average seminar session look like?</h2>
+<section id="what-will-the-average-session-look-like" class="slide level2">
+<h2>What will the average session look like?</h2>
 <div class="fragment">
-<p><i class="fa-solid fa-clock" aria-label="clock"></i> The course will consist of up to 13 sessions (90 minutes each)</p>
+<p><i class="fa-solid fa-clock" aria-label="clock"></i> The course will consist of 6 main sessions (ca. 60 minutes each)</p>
 </div>
 <div class="fragment">
 <ol type="1">
-<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Content Review (up to 30 minutes):</strong> <br> Course participants engage with <a href="https://lennartwittkuhn.com/version-control-book/">the online materials</a> (aka. our “Version Control Book”), supplemented by short presentations by the instructors. Some course preparation may occur outside of the class.</li>
+<li><i class="fa-solid fa-chalkboard-user" aria-label="chalkboard-user"></i> <strong>Demonstration (up to 15 minutes):</strong> <br> The instructor introduces the topic and gives a short demonstration of the main Git commands.</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="2" type="1">
-<li><i class="fa-solid fa-comments" aria-label="comments"></i> <strong>Interactive Discussions &amp; Quizzes (up to 15 minutes):</strong> <br>Course participants collectively address any inquiries related to the session’s content and online materials. Instructor-led quiz questions may also be interspersed throughout.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Exercises (up to 45 minutes):</strong> <br>Course participants actively delve into hands-on exercises and assignments.</li>
 </ol>
 </div>
 <div class="fragment">
 <ol start="3" type="1">
-<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Exercises &amp; Implementation (up to 60 minutes):</strong> <br>Course participants actively delve into hands-on exercises and assignments.</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading (in parallel to the exercises; up to 45 minutes):</strong> <br> Course participants engage with <a href="https://lennartwittkuhn.com/version-control-book/">the online learning materials</a> (aka. our “Version Control Book”).</li>
 </ol>
 </div>
 <div class="fragment">
-<!-- -->
-<h3 id="logistics">Logistics</h3>
-<ul>
-<li><i class="fa-solid fa-laptop" aria-label="laptop"></i> You need a laptop. Talk to us if you don’t have a laptop.</li>
-</ul>
+<ol start="4" type="1">
+<li><i class="fa-solid fa-comments" aria-label="comments"></i> <strong>Discussions (up to 10 minutes):</strong> <br>Course participants and instructor collectively address any questions related to the session’s content.</li>
+</ol>
 </div>
 <div class="fragment">
-<p>Note, that course participants are <strong>sometimes required to work on course materials outside of class time</strong>.</p>
-<p>Not all course contents will be covered during class time.</p>
+<ol start="5" type="1">
+<li><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i> <strong>Quizzes (up to 10 minutes):</strong> <br>Course participants complete online quizzes to test their knowledge.</li>
+</ol>
 </div>
 </section>
 <section id="schedule" class="slide level2">
@@ -582,7 +483,7 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <thead>
 <tr class="header">
 <th style="text-align: left;">No</th>
-<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Time</th>
 <th style="text-align: left;">Title</th>
 <th style="text-align: left;">Contents</th>
 <th style="text-align: left;">Reading</th>
@@ -592,113 +493,65 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">2024-04-08</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session01">Introduction to version control</a></strong></td>
-<td style="text-align: left;">Organisational matters<br>Overview of seminar sessions<br>Introduction to version control<br>Introduction to Git and its advantages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Intro to version control</a></td>
-<td style="text-align: left;"><a href="https://version-control-intro.formr.org">Course introduction Survey</a></td>
+<td style="text-align: left;">9:30 - 10:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session01"><strong>Welcome &amp; Introduction to Version Control</strong></a></strong></td>
+<td style="text-align: left;">Logistics and course admin<br>Results of course survey<br>Introduction to Version Control<br>Introduction to Git</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Introduction to Version Control</a></td>
+<td style="text-align: left;"><a href="https://version-control-intro.formr.org">Course survey</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">2024-04-15</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session02">Command line</a></strong></td>
-<td style="text-align: left;">File Systems<br>Benefits of the Command Line<br>Basic Command Line commands</td>
+<td style="text-align: left;">10:00 - 11:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session02"><strong>Basics of the Command Line</strong></a></strong></td>
+<td style="text-align: left;">File systems and navigation<br>Benefits of the command line<br>Basic command line commands</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/command-line.html">Command Line</a></td>
 <td style="text-align: left;"><a href="https://version-control-cli.formr.org">Command Line Quiz</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">2024-04-22</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session03">Setup + Git Fundamentals</a></strong></td>
-<td style="text-align: left;">Installation and configuration of Git<br>Initializing a Git repository<br>Basic Git commands</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html">Installation</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">Setup</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-installation.formr.org">Installation Survey</a>, <a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
+<td style="text-align: left;">11:00 - 12:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session03"><strong>Setup &amp; First steps with Git</strong></a></strong></td>
+<td style="text-align: left;">Configuration and setup of Git<br>Initializing a Git repository<br>Fundamental Git commands</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">Setup</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
+<td style="text-align: left;"><a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">2024-04-29</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session04">Basic Git workflow</a></strong></td>
-<td style="text-align: left;">Practicing basic Git commands<br>Ignoring files with .gitignore<br>Good commit messages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2024-05-06</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session05">Git Branching and Merging</a></strong></td>
+<td style="text-align: left;">12:00 - 13:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session04"><strong>Branches, Merging &amp; Merge Conflicts</strong></a></strong></td>
 <td style="text-align: left;">Understanding branches in Git<br>Creating and switching between branches<br>Merging branches<br>Resolving merge conflicts</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">Branches</a></td>
 <td style="text-align: left;"><a href="https://version-control-branches.formr.org">Git Branches Quiz</a></td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">13:00 - 14:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session05"><strong>Lunch Break</strong></a></strong></td>
+<td style="text-align: left;">Enjoy your lunch!</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 <tr class="even">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">2024-05-13</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session06">Quarto Workshop</a></strong></td>
-<td style="text-align: left;">Introduction to <a href="https://quarto.org">Quarto</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">2024-05-20</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session07">Whit Monday</a></strong></td>
-<td style="text-align: left;">Cancelled</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">2024-05-27</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session08">Introduction to GitHub</a></strong></td>
-<td style="text-align: left;">Introduction to remote repositories<br>Creating a GitHub account<br>Creating and managing repositories on GitHub<br>Pushing and pulling changes</td>
+<td style="text-align: left;">14:00 - 15:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session06"><strong>Integration with GitLab / GitHub</strong></a></strong></td>
+<td style="text-align: left;">Introduction to remote repositories<br>Creating and managing repositories on GitLab / GitHub<br>Pushing and pulling changes<br>Cloning a remote repository</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a></td>
 <td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">2024-06-03</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session09">GitHub with collaborators</a></strong></td>
-<td style="text-align: left;">Cloning a remote repository<br>Branching and merging in a collaborative environment<br>Pull Requests<br>GitHub Issues<br>Graphical User Interfaces (GUIs), e.g., GitKraken</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">15:00 - 16:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session07"><strong>Collaboration on GitLab / GitHub</strong></a></strong></td>
+<td style="text-align: left;">Forkinga repository<br>Collaboration with GitHub Flow<br>Pull / Merge Requests<br>Issues<br>README files</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-advanced.html">GitHub Advanced</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
 <td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">2024-06-10</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session10">GitHub with the world</a></strong></td>
-<td style="text-align: left;">Forking a remote repository <br>README files<br>Project Management</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
-<td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">2024-06-17</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session11">Publishing</a></strong></td>
-<td style="text-align: left;">Creating Tags with Git<br>Creating Releases with GitHub<br>Using <a href="https://zenodo.org">Zenodo</a> for scientific publishing<br>Licences<br>Citation Files</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/tags-and-releases.html">Tags and Releases</a></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">2024-06-24</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session12">Repetition and Practice</a></strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">2024-07-01</td>
-<td style="text-align: left;"><strong>Repetition and Practice</strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">2024-07-08</td>
-<td style="text-align: left;"><strong>Summary &amp; Wrap-Up</strong></td>
-<td style="text-align: left;">Summary &amp; Wrap-Up</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">16:00 - 16:30</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session08"><strong>Summary &amp; Outlook</strong></a></strong></td>
+<td style="text-align: left;">Summary of course contents<br>Outlook to more Git topics<br>Discussing open questions</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -708,9 +561,9 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 </div>
 </section>
 <section id="course-website" class="slide level2">
-<h2>Course Website</h2>
-<p><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i> <a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/">lennartwittkuhn.com/version-control-course-uhh-ss24</a></p>
-<iframe width="100%" height="74%" src="https://lennartwittkuhn.com/version-control-course-uhh-ss24/" title="Course Website"></iframe>
+<h2>Course website</h2>
+<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-course-mpib-2024">https://lennartwittkuhn.com/version-control-course-mpib-2024</a></p>
+<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-course-mpib-2024" title="Course Website"></iframe>
 <aside class="notes">
 <ul>
 <li>Course website is the main entry point for students before, during and after the course</li>
@@ -731,7 +584,7 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 </section>
 <section id="version-control-book" class="slide level2">
 <h2>Version Control Book</h2>
-<p><i class="fa-brands fa-internet-explorer" aria-label="internet-explorer"></i> <a href="https://lennartwittkuhn.com/version-control-book">lennartwittkuhn.com/version-control-book</a></p>
+<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/version-control-book">https://lennartwittkuhn.com/version-control-book</a></p>
 <iframe width="100%" height="80%" src="https://lennartwittkuhn.com/version-control-book" title="Version Control Book"></iframe>
 </section>
 <section id="exercises-quizzes-surveys" class="slide level2">
@@ -748,63 +601,81 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <ul>
 <li>all raw data are kept <strong>anonymous</strong> and will only be <strong>used for research and educational purposes</strong></li>
 <li>if responses are shared as part of the course, they will be aggregated to ensure anonymity is maintained</li>
-<li>if you want your data to be deleted, send an email with your personal codeword to <a href="mailto:sekretariat-luv.psych@uni-hamburg.de">sekretariat-luv.psych@uni-hamburg.de</a> (Christine Manor). Our secretary forwards your codeword to us (without your name).</li>
+<li>if you want your data to be deleted, send an email with your personal codeword to <a href="mailto:rdm@mpib-berlin.mpg.de">rdm@mpib-berlin.mpg.de</a>. Your codeword is then forwarded to us (without your name).</li>
 </ul>
 </div>
 </section>
-<section id="your-role-questions-and-communication" class="slide level2">
-<h2>Your role: questions and communication</h2>
+<section id="cheatsheets" class="slide level2">
+<h2>Cheatsheets</h2>
+<ul>
+<li>Each session / chapter / slidedeck contains a cheatsheet with relevant commands</li>
+<li>For an overview of all cheatsheets see <a href="https://lennartwittkuhn.com/version-control-book/misc/cheatsheet.html" class="uri">https://lennartwittkuhn.com/version-control-book/misc/cheatsheet.html</a>.</li>
+</ul>
 <div class="fragment">
 <!-- -->
-<h4 id="questions-discussions-during-class-time"><strong>Questions &amp; discussions <em>during</em> class time</strong></h4>
-<ul>
-<li>Ask questions! There are no stupid questions!</li>
-<li>Participate in the discussions</li>
-</ul>
+<h3 id="example-cheatsheet-basic-git-commands">Example cheatsheet: Basic Git commands</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>git init</code></td>
+<td style="text-align: left;">Initializes a folder as Git repository</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git status</code></td>
+<td style="text-align: left;">Views Git tracking status of files in the repository</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git add</code></td>
+<td style="text-align: left;">Adds file(s) to the staging area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git commit</code></td>
+<td style="text-align: left;">Commits staged files</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>git log</code></td>
+<td style="text-align: left;">Views past commits</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>git diff</code></td>
+<td style="text-align: left;">Views made changes compared to the last commit</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="fragment">
-<ul>
-<li>Ask questions! There are no stupid questions!</li>
-</ul>
 </div>
-<div class="fragment">
-<!-- -->
-<h4 id="questions-discussions-outside-of-class-time"><strong>Questions &amp; discussions <em>outside of</em> class time</strong></h4>
-<ul>
-<li>Ask questions! There are no stupid questions!</li>
-<li>Send questions to our mailing list: <a href="mailto:version-control-course-ss24.psych@lists.uni-hamburg.de">version-control-course-ss24.psych@lists.uni-hamburg.de</a></li>
-<li>Send questions to <a href="mailto:lennart.wittkuhn@tutanota.com">Lennart</a> and / or <a href="mailto:konrad.pagenstedt@uni-hamburg.de">Konrad</a></li>
-<li>Office hours by appointment via email</li>
-<li>Be proactive: Give us feedback!</li>
-</ul>
 </div>
 </section>
-<section id="your-role-active-participation" class="slide level2">
-<h2>Your role: active participation</h2>
-<div class="fragment">
-<!-- -->
-<h4 id="active-participation"><strong>Active participation</strong></h4>
+<section id="pair-programming-variant" class="slide level2">
+<h2>Pair Programming (variant)</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
-<li>This is a pass / fail course. You pass if you fulfill all course requirements:</li>
-<li>Requirement 1: Come to at least <strong>11 out of 13 sessions</strong> (85%)</li>
-<li>Requirement 2: Complete all <strong>surveys/quizzes</strong></li>
-<li>Requirement 3: Complete <strong>all mandatory exercises</strong> (implemented in Git)</li>
+<li>Find and say hello to your nearest desk neighbor</li>
+<li>Complete the exercises together, help each other out, etc.</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/turing-way-community.svg"></p>
+<figcaption>This illustration is created by <a href="https://www.scriberia.com/">Scriberia</a> with <a href="https://the-turing-way.netlify.app/welcome">The Turing Way community</a>. Used under a <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 licence</a>. DOI: <a href="https://doi.org/10.5281/zenodo.3695300">10.5281/zenodo.3332807</a></figcaption>
+</figure>
 </div>
-<div class="fragment">
-<!-- -->
-<h4 id="how-do-we-verify-the-course-requirements">How do we verify the course requirements?</h4>
-<ol type="1">
-<li>Requirement 1: <strong>Sign the attendance list</strong></li>
-<li>Requirement 2: <strong>Provide a personal codeword</strong>. At the end of the semester, send an email with your personal codeword to <a href="mailto:sekretariat-luv.psych@uni-hamburg.de">sekretariat-luv.psych@uni-hamburg.de</a> (Christine Manor). We will send our secretary a list of personal codewords and she will return a list of names.</li>
-<li>Requirement 3: At the end of the semester, <strong>send a link to your completed exercises</strong>.</li>
-</ol>
+</div>
 </div>
 </section>
 <section id="course-exercise-building-an-online-recipes-book" class="slide level2">
 <h2>Course exercise: Building an online recipes book</h2>
-<p>Example: <a href="https://lennartwittkuhn.com/recipes" class="uri">https://lennartwittkuhn.com/recipes</a></p>
-<iframe width="100%" height="100%" src="https://lennartwittkuhn.com/recipes/" title="Course Website"></iframe>
+<p><i class="fa-solid fa-display" aria-label="display"></i> <a href="https://lennartwittkuhn.com/recipes">https://lennartwittkuhn.com/recipes</a></p>
+<iframe width="100%" height="80%" src="https://lennartwittkuhn.com/recipes" title="Course Website"></iframe>
 </section>
 <section id="code-of-conduct" class="slide level2">
 <h2>Code of Conduct</h2>
@@ -816,82 +687,47 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <li>Participants should not take pictures of any activity in the course room without asking all involved participants for consent and receiving this consent.</li>
 </ul>
 <p>A first violation of this code of conduct will result in a warning, and subsequent violations by the same person can result in the immediate removal from the course without further warning. The organizers also reserve the right to prohibit attendance of excluded participants from similar future workshops, courses or meetings they organize.</p>
+</section>
+<section id="breaks" class="slide level2">
+<h2>Breaks</h2>
+<ul>
+<li>We will have a one-hour lunch break at 1 p.m.</li>
+<li>Feel free to take short breaks in-between (sessions) when needed.</li>
+</ul>
 </section></section>
 <section>
 <section id="survey-results" class="title-slide slide level1 center" data-number="2">
 <h1><span class="header-section-number">2</span> Survey results</h1>
+<p><span class="emoji" data-emoji="pray">🙏</span> Thank you for your responses!</p>
+</section>
+<section id="lets-do-the-splits" class="slide level2">
+<h2>Let’s do the splits</h2>
 
-</section>
-<section id="expectations" class="slide level2">
-<h2>Expectations</h2>
-<ul>
-<li><p>No idea (for example: “i really have no idea about that”)</p></li>
-<li><p>Data analysis (for example: “How to work with research data”)</p></li>
-<li><p><strong>Git/GitHub</strong> (for example: “Practical tasks with git and github, theoretical background”)</p></li>
-</ul>
-</section>
-<section id="hopes" class="slide level2">
-<h2>Hopes</h2>
-<ul>
-<li><p>Data analysis skills (for example: “Learning practical information about data analyses”)</p></li>
-<li><p>Coding skills (for example: “Hopes for better coding skills post-course”)</p></li>
-<li><p>Science Communication (for example: “Science communication and networking using research”)</p></li>
-<li><p>Version Control Skills (for example: “Getting an idea of what is possible with GitHub”)</p></li>
-</ul>
-</section>
-<section id="worries" class="slide level2">
-<h2>Worries</h2>
-<ul>
-<li><p>Lack of coding skills (for example: “My low ability in coding”)</p></li>
-<li><p>Inadequate previous knowledge (for example: “I worry that I don’t have enough previous knowledge”)</p></li>
-<li><p>Language barrier</p></li>
-<li><p>Learning pace</p></li>
-</ul>
-</section>
-<section id="motivation" class="slide level2">
-<h2>Motivation</h2>
-<ul>
-<li><p>Pragmatic course selection (for example: “I needed a course for ‘Wahlbereich’ and this one was the only available one.”)</p></li>
-<li><p>Learning new skills (for example: “For me it is very important to get to know tools and learn how to handle them.”)</p></li>
-</ul>
-</section>
-<section id="version-control" class="slide level2">
-<h2>Version Control</h2>
-<h3 id="can-you-briefly-define-the-term-version-control">Can you briefly define the term version control?</h3>
-<ul>
-<li><p>No idea (for example: “I don’t know what that is”)</p></li>
-<li><p>“(…) it’s about comparing the latest version of someone else who is working on the same project as me with my version”</p></li>
-</ul>
-</section>
-<section id="scenarios" class="slide level2">
-<h2>Scenarios</h2>
-<h4 id="imagine-a-scenario-where-you-crafted-a-brilliant-paragraph-for-your-document-for-example-your-paper-thesis-or-report-but-then-accidentally-ruined-it.-how-would-you-retrieve-the-earlier-brilliant-version-is-it-even-possible">Imagine a scenario where you crafted a brilliant paragraph for your document (for example, your paper, thesis or report), but then accidentally ruined it. How would you retrieve the earlier brilliant version? Is it even possible?</h4>
-<ul>
-<li>“In the past, I mostly worked with doc documents (word) and saved every day a new version when I was the only person working on the document. This was not very practical and I hope to learn an alternative during this course”</li>
-</ul>
-<h4 id="consider-a-situation-where-you-are-working-with-five-co-authors-on-a-paper.-how-do-you-handle-the-changes-and-comments-they-make-to-the-document">(…) Consider a situation where you are working with five co-authors on a paper. How do you handle the changes and comments they make to the document</h4>
-<ul>
-<li>“I know that you can accept changes and comments in word, but I always find it confusing and complex to keep the overview. I don’t know what happens to the history of modifications.”</li>
-</ul>
-</section></section>
+<img data-src="../images/splits.jpg" class="r-stretch quarto-figure-center"></section></section>
 <section>
 <section id="introduction-to-version-control" class="title-slide slide level1 center" data-number="3">
-<h1><span class="header-section-number">3</span> Introduction to version control</h1>
+<h1><span class="header-section-number">3</span> Introduction to Version Control</h1>
 
 </section>
 <section id="learning-objectives" class="slide level2">
 <h2>Learning objectives</h2>
-<p>At the end of this session, you should be able to answer the following questions:</p>
-<p><span class="emoji" data-emoji="bulb">💡</span> What is version control?<br> <span class="emoji" data-emoji="bulb">💡</span> Why is version control useful (for research)?<br> <span class="emoji" data-emoji="bulb">💡</span> What are Git and GitHub?<br> <span class="emoji" data-emoji="bulb">💡</span> What is the difference between Git and GitHub?</p>
+<p>At the end of this session, you should be able to answer the following questions and / or achieve the following learning objectives:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know what version control is.<br> <span class="emoji" data-emoji="bulb">💡</span> You can argue why version control is useful (for research).<br> <span class="emoji" data-emoji="bulb">💡</span> You can name benefits of Git compared to other approaches to version control.<br> <span class="emoji" data-emoji="bulb">💡</span> You can explain the difference between Git and GitHub.<br></p>
 </section>
 <section id="your-turn" class="slide level2">
 <h2>Your turn</h2>
+<p>In this session, you will work on the following tasks:</p>
 <ol type="1">
-<li>Read <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Chapter 1: “Introduction to Version Control”</a> in the <a href="https://lennartwittkuhn.com/version-control-book/">Version Control Book</a></li>
-<li>Discuss the learning objectives with your desk neighbor (quietly)</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading</strong>: Read the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">“Introduction to Version Control”</a> in the <a href="https://lennartwittkuhn.com/version-control-book">Version Control Book</a>.</li>
+<li><i class="fa-solid fa-comments" aria-label="comments"></i> <strong>Discussion:</strong> Discuss the learning objectives with your desk neighbor (quietly)</li>
 </ol>
 <h4 id="learning-objectives-1">Learning objectives</h4>
-<p><span class="emoji" data-emoji="bulb">💡</span> What is version control?<br> <span class="emoji" data-emoji="bulb">💡</span> Why is version control useful (for research)?<br> <span class="emoji" data-emoji="bulb">💡</span> What are Git and GitHub?<br> <span class="emoji" data-emoji="bulb">💡</span> What is the difference between Git and GitHub?</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You know what version control is.<br> <span class="emoji" data-emoji="bulb">💡</span> You can argue why version control is useful (for research).<br> <span class="emoji" data-emoji="bulb">💡</span> You can name benefits of Git compared to other approaches to version control.<br> <span class="emoji" data-emoji="bulb">💡</span> You can explain the difference between Git and GitHub.<br></p>
+</section></section>
+<section>
+<section id="discussion" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Discussion</h1>
+
 </section>
 <section id="the-issue-of-computational-reproducibility-in-science" class="slide level2">
 <h2>The issue of computational reproducibility in science</h2>
@@ -1072,7 +908,12 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
           display:block!important;
       }</style></aside>
 <aside></aside></section>
+</section>
+<section>
+<section id="outlook" class="title-slide slide level1 center" data-number="5">
+<h1><span class="header-section-number">5</span> Outlook</h1>
 
+</section>
 <section id="schedule-1" class="slide level2">
 <h2>Schedule</h2>
 <div class="cell">
@@ -1081,7 +922,7 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <thead>
 <tr class="header">
 <th style="text-align: left;">No</th>
-<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Time</th>
 <th style="text-align: left;">Title</th>
 <th style="text-align: left;">Contents</th>
 <th style="text-align: left;">Reading</th>
@@ -1091,113 +932,65 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">2024-04-08</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session01">Introduction to version control</a></strong></td>
-<td style="text-align: left;">Organisational matters<br>Overview of seminar sessions<br>Introduction to version control<br>Introduction to Git and its advantages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Intro to version control</a></td>
-<td style="text-align: left;"><a href="https://version-control-intro.formr.org">Course introduction Survey</a></td>
+<td style="text-align: left;">9:30 - 10:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session01"><strong>Welcome &amp; Introduction to Version Control</strong></a></strong></td>
+<td style="text-align: left;">Logistics and course admin<br>Results of course survey<br>Introduction to Version Control<br>Introduction to Git</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/intro-version-control.html">Introduction to Version Control</a></td>
+<td style="text-align: left;"><a href="https://version-control-intro.formr.org">Course survey</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">2024-04-15</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session02">Command line</a></strong></td>
-<td style="text-align: left;">File Systems<br>Benefits of the Command Line<br>Basic Command Line commands</td>
+<td style="text-align: left;">10:00 - 11:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session02"><strong>Basics of the Command Line</strong></a></strong></td>
+<td style="text-align: left;">File systems and navigation<br>Benefits of the command line<br>Basic command line commands</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/command-line.html">Command Line</a></td>
 <td style="text-align: left;"><a href="https://version-control-cli.formr.org">Command Line Quiz</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">2024-04-22</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session03">Setup + Git Fundamentals</a></strong></td>
-<td style="text-align: left;">Installation and configuration of Git<br>Initializing a Git repository<br>Basic Git commands</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html">Installation</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">Setup</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-installation.formr.org">Installation Survey</a>, <a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
+<td style="text-align: left;">11:00 - 12:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session03"><strong>Setup &amp; First steps with Git</strong></a></strong></td>
+<td style="text-align: left;">Configuration and setup of Git<br>Initializing a Git repository<br>Fundamental Git commands</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/setup.html">Setup</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
+<td style="text-align: left;"><a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">2024-04-29</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session04">Basic Git workflow</a></strong></td>
-<td style="text-align: left;">Practicing basic Git commands<br>Ignoring files with .gitignore<br>Good commit messages</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/first-steps-git.html">First steps with Git</a></td>
-<td style="text-align: left;"><a href="https://version-control-basics.formr.org">Git Basics Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">2024-05-06</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session05">Git Branching and Merging</a></strong></td>
+<td style="text-align: left;">12:00 - 13:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session04"><strong>Branches, Merging &amp; Merge Conflicts</strong></a></strong></td>
 <td style="text-align: left;">Understanding branches in Git<br>Creating and switching between branches<br>Merging branches<br>Resolving merge conflicts</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/branches.html">Branches</a></td>
 <td style="text-align: left;"><a href="https://version-control-branches.formr.org">Git Branches Quiz</a></td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">13:00 - 14:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session05"><strong>Lunch Break</strong></a></strong></td>
+<td style="text-align: left;">Enjoy your lunch!</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
 <tr class="even">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">2024-05-13</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session06">Quarto Workshop</a></strong></td>
-<td style="text-align: left;">Introduction to <a href="https://quarto.org">Quarto</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">2024-05-20</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session07">Whit Monday</a></strong></td>
-<td style="text-align: left;">Cancelled</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">2024-05-27</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session08">Introduction to GitHub</a></strong></td>
-<td style="text-align: left;">Introduction to remote repositories<br>Creating a GitHub account<br>Creating and managing repositories on GitHub<br>Pushing and pulling changes</td>
+<td style="text-align: left;">14:00 - 15:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session06"><strong>Integration with GitLab / GitHub</strong></a></strong></td>
+<td style="text-align: left;">Introduction to remote repositories<br>Creating and managing repositories on GitLab / GitHub<br>Pushing and pulling changes<br>Cloning a remote repository</td>
 <td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a></td>
 <td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">2024-06-03</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session09">GitHub with collaborators</a></strong></td>
-<td style="text-align: left;">Cloning a remote repository<br>Branching and merging in a collaborative environment<br>Pull Requests<br>GitHub Issues<br>Graphical User Interfaces (GUIs), e.g., GitKraken</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">15:00 - 16:00</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session07"><strong>Collaboration on GitLab / GitHub</strong></a></strong></td>
+<td style="text-align: left;">Forkinga repository<br>Collaboration with GitHub Flow<br>Pull / Merge Requests<br>Issues<br>README files</td>
+<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-advanced.html">GitHub Advanced</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
 <td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">2024-06-10</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session10">GitHub with the world</a></strong></td>
-<td style="text-align: left;">Forking a remote repository <br>README files<br>Project Management</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/github-intro.html">GitHub Intro</a>, <a href="https://lennartwittkuhn.com/version-control-book/chapters/issues.html">GitHub Issues</a></td>
-<td style="text-align: left;"><a href="https://version-control-github.formr.org">GitHub Quiz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">2024-06-17</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session11">Publishing</a></strong></td>
-<td style="text-align: left;">Creating Tags with Git<br>Creating Releases with GitHub<br>Using <a href="https://zenodo.org">Zenodo</a> for scientific publishing<br>Licences<br>Citation Files</td>
-<td style="text-align: left;"><i class="fa-solid fa-book" aria-label="book"></i> <a href="https://lennartwittkuhn.com/version-control-book/chapters/tags-and-releases.html">Tags and Releases</a></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">2024-06-24</td>
-<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/session12">Repetition and Practice</a></strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">13</td>
-<td style="text-align: left;">2024-07-01</td>
-<td style="text-align: left;"><strong>Repetition and Practice</strong></td>
-<td style="text-align: left;">Repetition and Practice</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">14</td>
-<td style="text-align: left;">2024-07-08</td>
-<td style="text-align: left;"><strong>Summary &amp; Wrap-Up</strong></td>
-<td style="text-align: left;">Summary &amp; Wrap-Up</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">16:00 - 16:30</td>
+<td style="text-align: left;"><strong><a href="https://lennartwittkuhn.com/version-control-course-mpib-2024/sessions/session08"><strong>Summary &amp; Outlook</strong></a></strong></td>
+<td style="text-align: left;">Summary of course contents<br>Outlook to more Git topics<br>Discussing open questions</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -1206,180 +999,10 @@ Konrad Pagenstedt <a href="https://orcid.org/0009-0000-6867-1546" class="quarto-
 </div>
 </div>
 </section>
-<section id="next-week-the-command-line" class="slide level2">
-<h2>Next week: The command line</h2>
+<section id="next-session-the-command-line" class="slide level2">
+<h2>Next session: The command line</h2>
 
 <img data-src="../images/command-line.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://commons.wikimedia.org/wiki/File:Linux_command-line._Bash._GNOME_Terminal._screenshot.png">Wikimedia Commons</a> (free license)</p></section>
-<section id="homework" class="slide level2">
-<h2>Homework</h2>
-<div class="fragment">
-<!-- -->
-<h3 id="check-if-you-have-git-a-command-line-installed">1. Check if you have Git / a command line installed</h3>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h4 id="windows-users-fa-brands-windows">Windows Users <i class="fa-brands fa-windows" aria-label="windows"></i></h4>
-<ul>
-<li>Download and install <a href="https://gitforwindows.org">Git for Windows</a> until <strong>next week</strong></li>
-<li>You can find a tutorial in the <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html">Version Control Book</a></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h4 id="apple-fa-brands-apple-or-linux-users-fa-brands-linux">Apple <i class="fa-brands fa-apple" aria-label="apple"></i> or Linux Users <i class="fa-brands fa-linux" aria-label="linux"></i></h4>
-<ul>
-<li>Download and install <a href="https://git-scm.com">Git</a> until <strong>15.04.</strong> (in two weeks)</li>
-<li>You can find a tutorial in our <a href="https://lennartwittkuhn.com/version-control-book/chapters/installation.html">Version Control Book</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment">
-<!-- -->
-<h3 id="complete-the-pre-course-survey">2. Complete the pre-course survey</h3>
-</div>
-</section>
-<section id="research-colloquium-cognitive-neuroscience" class="slide level2">
-<h2>Research Colloquium: Cognitive Neuroscience</h2>
-<table>
-<colgroup>
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 53%">
-<col style="width: 23%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Date</th>
-<th>Time</th>
-<th>Topic</th>
-<th>Presenter</th>
-<th>Room</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>03 Apr</td>
-<td>17:00</td>
-<td>Hippocampal Remapping and Reward coding in mice</td>
-<td>Mari Sosa (Stanford)</td>
-<td>Zoom</td>
-</tr>
-<tr class="even">
-<td>10 Apr</td>
-<td>10:15</td>
-<td>Meta Learning of Learning Rates</td>
-<td>Jonas Simoens (U Ghent)</td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="odd">
-<td>17 Apr</td>
-<td>10:15</td>
-<td>Decision Making Strategies in younger and older adults</td>
-<td>Alexa Ruel (UHH)</td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="even">
-<td>24 Apr</td>
-<td>15:15</td>
-<td>Replay shapes abstract cognitive maps for efficient social navigation</td>
-<td>Jae-Young Son (Brown)</td>
-<td>VMP 5 4054</td>
-</tr>
-<tr class="odd">
-<td>08 May</td>
-<td>16:00</td>
-<td>TBD</td>
-<td>Bob Wilson (U Arizona)</td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="even">
-<td>15 May</td>
-<td>10:15</td>
-<td>TBD</td>
-<td>Tobias Donner (UKE Hamburg)</td>
-<td>VMP 5 4054</td>
-</tr>
-<tr class="odd">
-<td>29 May</td>
-<td>14:00</td>
-<td>TBD</td>
-<td>Ben Eppinger (U Greifswald)</td>
-<td>VMP 5 4054</td>
-</tr>
-<tr class="even">
-<td>05 Jun</td>
-<td>10:15</td>
-<td>Memory replay in younger and older adults</td>
-<td>Xiangjuan Ren (UHH)</td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="odd">
-<td>12 Jun</td>
-<td>10:15</td>
-<td>Generalisation through replay</td>
-<td>Fabian Renz (UHH)</td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="even">
-<td>19 Jun</td>
-<td>TBD</td>
-<td></td>
-<td></td>
-<td>VMP 5 4018</td>
-</tr>
-<tr class="odd">
-<td>26 Jun</td>
-<td>TBD</td>
-<td></td>
-<td></td>
-<td>VMP 5 4018</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="research-teaching-assistant-positions-thesis-projects-1" class="slide level2">
-<h2>Research / teaching assistant positions + thesis projects</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../images/git-logo-full.svg" style="width:85.0%"></p>
-<figcaption><a href="https://git-scm.com/">git-scm.com</a></figcaption>
-</figure>
-</div>
-<h3 id="version-control-course-1">Version Control Course</h3>
-<ul>
-<li><span class="emoji" data-emoji="notebook">📓</span> <strong>Tasks:</strong> Support our teaching project!</li>
-<li><span class="emoji" data-emoji="calendar">📆</span> <strong>Duration:</strong> flexible</li>
-<li><span class="emoji" data-emoji="clock1">🕐</span> <strong>Time:</strong> flexible</li>
-<li><span class="emoji" data-emoji="moneybag">💰</span> <strong>Salary:</strong> 12.00 € / hour (SHK) / 13.95 € / hour (WHK)</li>
-<li><span class="emoji" data-emoji="envelope">✉️</span> <strong>Contact:</strong> <a href="mailto:lennart.wittkuhn@tutanota.com">lennart.wittkuhn@tutanota.com</a></li>
-</ul>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 55.6%;justify-content: center;">
-<p><img data-src="../images/mri.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 44.4%;justify-content: center;">
-<p><img data-src="../images/brain-anatomical.png"></p>
-</div>
-</div>
-</div>
-<h3 id="research-projects-in-our-group-1">Research projects in our group</h3>
-<ul>
-<li><span class="emoji" data-emoji="notebook">📓</span> <strong>Tasks:</strong> data collection &amp; analysis (e.g., fMRI)</li>
-<li><span class="emoji" data-emoji="calendar">📆</span> <strong>Duration:</strong> felxible</li>
-<li><span class="emoji" data-emoji="clock1">🕐</span> <strong>Time:</strong> flexible</li>
-<li><span class="emoji" data-emoji="moneybag">💰</span> <strong>Salary:</strong> 12.00 € / hour (SHK) / 13.95 € / hour (WHK)</li>
-<li><span class="emoji" data-emoji="envelope">✉️</span> <strong>Contact:</strong> <a href="mailto:sekretariat-luv.psych@uni-hamburg.de">sekretariat-luv.psych@uni-hamburg.de</a></li>
-</ul>
-</div>
-</div>
-</div>
-</section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
@@ -1391,9 +1014,6 @@ Crüwell, S., Apthorp, D., Baker, B. J., Colling, L., Elson, M., Geiger, S. J., 
 </div>
 <div id="ref-hardwicke2021" class="csl-entry" role="listitem">
 Hardwicke, T. E., Bohn, M., MacDonald, K., Hembacher, E., Nuijten, M. B., Peloquin, B. N., deMayo, B. E., Long, B., Yoon, E. J., &amp; Frank, M. C. (2021). Analytic reproducibility in articles receiving open data badges at the journal <span><em>Psychological Science</em></span> : an observational study. <em>Royal Society Open Science</em>, <em>8</em>(1). <a href="https://doi.org/10.1098/rsos.201494">https://doi.org/10.1098/rsos.201494</a>.
-</div>
-<div id="ref-lake2016" class="csl-entry" role="listitem">
-Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2016). Building machines that learn and think like people. <em>Behavioral and Brain Sciences</em>, <em>40</em>. <a href="https://doi.org/10.1017/s0140525x16001837">https://doi.org/10.1017/s0140525x16001837</a>.
 </div>
 <div id="ref-munafò2017" class="csl-entry" role="listitem">
 Munafò, M. R., Nosek, B. A., Bishop, D. V. M., Button, K. S., Chambers, C. D., Percie du Sert, N., Simonsohn, U., Wagenmakers, E.-J., Ware, J. J., &amp; Ioannidis, J. P. A. (2017). A manifesto for reproducible science. <em>Nature Human Behaviour</em>, <em>1</em>(1). <a href="https://doi.org/10.1038/s41562-016-0021">https://doi.org/10.1038/s41562-016-0021</a>.

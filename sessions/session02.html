@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-04-15">
 
-<title>Version Control with Git - Command Line</title>
+<title>Version Control with Git - Basics of the Command Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -86,6 +119,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><i class="fa-solid fa-circle-info" aria-label="circle-info"></i> About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-clipboard-list" aria-label="clipboard-list"></i> Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sessions/index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-solid fa-list-ol" aria-label="list-ol"></i> Sessions</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../code-of-conduct.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-handshake" aria-label="handshake"></i> Code of Conduct</span></a>
   </li>  
@@ -118,9 +159,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#this-session" id="toc-this-session" class="nav-link active" data-scroll-target="#this-session">This session</a></li>
-  <li><a href="#recipes-project" id="toc-recipes-project" class="nav-link" data-scroll-target="#recipes-project"><code>recipes</code> project</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#recipes-project" id="toc-recipes-project" class="nav-link" data-scroll-target="#recipes-project"><code>recipes</code> project</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul>
+  <li><a href="#navigation-and-setup" id="toc-navigation-and-setup" class="nav-link" data-scroll-target="#navigation-and-setup">Navigation and setup</a></li>
+  <li><a href="#creating-a-folder-and-a-file" id="toc-creating-a-folder-and-a-file" class="nav-link" data-scroll-target="#creating-a-folder-and-a-file">Creating a folder and a file</a></li>
+  <li><a href="#writing-and-opening-files" id="toc-writing-and-opening-files" class="nav-link" data-scroll-target="#writing-and-opening-files">Writing and opening files</a></li>
+  <li><a href="#creating-multiple-files" id="toc-creating-multiple-files" class="nav-link" data-scroll-target="#creating-multiple-files">Creating multiple files</a></li>
+  <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
+  <li><a href="#bonus-question" id="toc-bonus-question" class="nav-link" data-scroll-target="#bonus-question">Bonus question</a></li>
+  </ul></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet">Cheatsheet</a></li>
   </ul>
 </nav>
     </div>
@@ -134,19 +186,19 @@ ul.task-list li input[type="checkbox"] {
     <div class="entity-contents">
       <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Command Line</h1>
+<h1 class="title">Basics of the Command Line</h1>
 <p class="subtitle lead">Session 02</p>
 </div>
 <div class="quarto-title-meta">
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Starts at:</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 15, 2024</p>
+      <p class="date">08:00</p>
     </div>
   </div>
   </div>
 </header> <div class="about-links">
-  <a href="https://lennartwittkuhn.com/version-control-course-uhh-ss24/sessions/slides_session02.html" class="about-link" rel="" target="">
+  <a href="https://lennartwittkuhn.com/version-control-course-mpib-2024//sessions/slides_session02.html" class="about-link" rel="" target="">
     <i class="bi bi-display"></i>
      <span class="about-link-text">Slides</span>
   </a>
@@ -167,17 +219,25 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="this-session" class="level2">
 <h2 data-anchor-id="this-session">This session</h2>
-<p>In this session, you will complete the following tasks:</p>
+<p>In this session, you will work on the following tasks:</p>
 <ol type="1">
-<li>Read the <a href="https://lennartwittkuhn.com/version-control-book/chapters/command-line.html">chapter “Command Line”</a> of the Version Control</li>
-<li>Complete the exercises for the <a href="#recipes-project"><code>recipes</code> project</a>.</li>
-<li>Complete the quiz questions / exercises in the <a href="https://version-control-cli.formr.org">Command Line survey</a>.</li>
+<li><i class="fa-solid fa-book-open" aria-label="book-open"></i> <strong>Reading</strong>: Read the chapter <a href="https://lennartwittkuhn.com/version-control-book/chapters/command-line.html">“Command Line”</a> in the Version Control Book.</li>
+<li><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> <strong>Implementation</strong>: Try out the commands in the chapter.</li>
+<li><i class="fa-solid fa-list-check" aria-label="list-check"></i> <strong>Exercises</strong>: Work on the <a href="#exercises">exercises</a> for the <a href="#recipes-project"><code>recipes</code> project</a>.</li>
+<li><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i> <strong>Quiz</strong>: Test your knowledge with the <a href="https://version-control-cli.formr.org/">quiz</a>.</li>
 </ol>
 <p>As always:</p>
 <ol type="1">
-<li>Try out the commands in the chapter and play around with them.</li>
+<li>Try out the commands of this session and play around with them.</li>
 <li>Check whether you have achieved the <a href="#learning-objectives">learning objectives</a>.</li>
+<li>Ask questions!</li>
+<li>Let’s <em>git</em> started!</li>
 </ol>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>At the end of this session, you should be able to answer the following questions and / or achieve the following learning objectives:</p>
+<p><span class="emoji" data-emoji="bulb">💡</span> You can navigate directories using the command line <br> <span class="emoji" data-emoji="bulb">💡</span> You can use shortcuts like the tilde or dots to navigate your file system <br> <span class="emoji" data-emoji="bulb">💡</span> You can explain the difference between absolute and relative paths <br> <span class="emoji" data-emoji="bulb">💡</span> You can use arguments and flags to modify command-line commands <br> <span class="emoji" data-emoji="bulb">💡</span> You understand the concept of wild cards (<code>*</code>) and can use it for system navigation</p>
 </section>
 <section id="recipes-project" class="level2">
 <h2 data-anchor-id="recipes-project"><code>recipes</code> project</h2>
@@ -188,23 +248,191 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Please keep the <code>recipes</code> folder! We will continue to use it in the following sessions.</p>
 </section>
-<section id="learning-objectives" class="level2">
-<h2 data-anchor-id="learning-objectives">Learning objectives</h2>
-<p><span class="emoji" data-emoji="bulb">💡</span> You can navigate directories using the command line <br> <span class="emoji" data-emoji="bulb">💡</span> You can use shortcuts like the tilde or dots to navigate your file system <br> <span class="emoji" data-emoji="bulb">💡</span> You can explain the difference between absolute and relative paths <br> <span class="emoji" data-emoji="bulb">💡</span> You can use arguments and flags to modify command-line commands <br> <span class="emoji" data-emoji="bulb">💡</span> You understand the concept of wild cards (<code>*</code>) and can use it for system navigation</p>
+<section id="exercises" class="level2">
+<h2 data-anchor-id="exercises">Exercises</h2>
+<section id="navigation-and-setup" class="level3">
+<h3 data-anchor-id="navigation-and-setup">Navigation and setup</h3>
+<p>Identify a folder on your computer where you (want to) keep course-related files. If you don’t have one, choose a suitable location in your file system. <strong>Navigate into the chosen location</strong> using the command line. Use the command line to <strong>display the path</strong> of your chosen directory. What is the output?</p>
 </section>
-<section id="slides" class="level2">
-<h2 data-anchor-id="slides">Slides</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="How can I download the slides as PDF?">
+<section id="creating-a-folder-and-a-file" class="level3">
+<h3 data-anchor-id="creating-a-folder-and-a-file">Creating a folder and a file</h3>
+<p>Within your chosen folder, create a new subfolder and name it <code>recipes</code>. Navigate into the <code>recipes</code> folder. <strong>Create a new file</strong> and name it <code>recipes.txt</code>. <strong>Confirm the creation of the file by listing the contents</strong> of the <code>recipes</code> folder. Which commands did you use?</p>
+</section>
+<section id="writing-and-opening-files" class="level3">
+<h3 data-anchor-id="writing-and-opening-files">Writing and opening files</h3>
+<p><strong>Add the title</strong> “My Favorite Recipes” to <code>recipes.txt</code>. Which command or method did you use?</p>
+</section>
+<section id="creating-multiple-files" class="level3">
+<h3 data-anchor-id="creating-multiple-files">Creating multiple files</h3>
+<p>Go back to your main course-related folder. Using the command line, <strong>create three new files:</strong> <code>notes.txt</code>, <code>assignments.txt</code>, and <code>schedule.txt</code>. Provide the command you used.</p>
+</section>
+<section id="wildcards" class="level3">
+<h3 data-anchor-id="wildcards">Wildcards</h3>
+<p>Use a wildcard pattern to <strong>list all <code>.txt</code> files</strong> in your folder. Which command did you use?</p>
+</section>
+<section id="bonus-question" class="level3">
+<h3 data-anchor-id="bonus-question">Bonus question</h3>
+<p>Imagine, that you are in a folder containing multiple text files with various extensions, including <code>.txt</code>, <code>.md</code>, and <code>.docx</code>. You want to move all the <code>.txt</code> files to a subfolder named “text_files” while keeping the other file types in the current directory. Write a series of command-line commands to accomplish this task, including creating the “text_files” subdirectory. Explain each step in your solution.</p>
+</section>
+</section>
+<section id="solutions" class="level2">
+<h2 data-anchor-id="solutions">Solutions</h2>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Navigation and setup">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How can I download the slides as PDF?
+Solution: Navigation and setup
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For folder navigation, use <code>cd</code>. To display the contents of a folder, use <code>ls</code>. To display the path of the current working directory, use <code>pwd</code>.</p>
+<p>For example, on macOS if you navigated to the <code>Documents</code> folder and used <code>pwd</code>, the path looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users/myusername/Documents</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Creating a folder and a file">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Creating a folder and a file
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a folder called <code>recipes</code>:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Navigate into the <code>recipes</code> folder:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recipes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Create a file and name it <code>recipes.txt</code>:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>List the contents of the <code>recipes</code> folder:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Writing and opening files">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Writing and opening files
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>I added the title to <code>recipes.txt</code> by using the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"My Favorite Recipes"</span> <span class="op">&gt;</span> recipes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This command writes “My Favorite Recipes” to the file, overwriting any existing content.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Creating multiple files">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Creating multiple files
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> notes.txt assignments.txt schedule.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Wildcards">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Wildcards
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled" title="Solution: Bonus question">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution: Bonus question
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Creating the “text_files” subfolder:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Moving all the <code>.txt</code> files to the “text_files” subfolder:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="pp">*</span>.txt text_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="slides" class="level2">
+<h2 data-anchor-id="slides">Slides</h2>
+<div class="callout callout-style-simple callout-note callout-titled" title="How can I download the slides as a PDF file?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How can I download the slides as a PDF file?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To print the slides to PDF, do the following:</p>
 <ol type="1">
@@ -224,6 +452,131 @@ How can I download the slides as PDF?
 </div>
 </div>
 <iframe width="100%" height="500" src="slides_session02.html"></iframe>
+</section>
+<section id="cheatsheet" class="level2">
+<h2 data-anchor-id="cheatsheet">Cheatsheet</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pwd</code></td>
+<td style="text-align: left;">Displays the path of the current working directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cd &lt;PATH&gt;</code></td>
+<td style="text-align: left;">Changes the current working directory to <code>&lt;PATH&gt;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cd ~</code></td>
+<td style="text-align: left;">Changes the current working directory to the user’s home directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>cd ..</code></td>
+<td style="text-align: left;">Moves up one folder</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cd ../..</code></td>
+<td style="text-align: left;">Moves up two folders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>clear</code></td>
+<td style="text-align: left;">Clears the contents of your command line window</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls</code></td>
+<td style="text-align: left;">Lists files and folders in the current working directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls &lt;PATH&gt;</code></td>
+<td style="text-align: left;">Lists files and folders in <code>&lt;PATH&gt;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>ls -a</code></td>
+<td style="text-align: left;">Lists all files (including hidden files) in the current working directory</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls -alh</code></td>
+<td style="text-align: left;">Lists all files in a long format that is easy to read for humans</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Command] --help</code></td>
+<td style="text-align: left;">Displays all possible flags for a specific command (on Windows)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>man [Command]</code></td>
+<td style="text-align: left;">Displays all possible flags for a specific command (on macOS)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mkdir &lt;FOLDER&gt;</code></td>
+<td style="text-align: left;">Creates a new folder called <code>&lt;FOLDER&gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mkdir &lt;FOLDER1&gt; &lt;FOLDER2&gt;</code></td>
+<td style="text-align: left;">Creates two separate folders called <code>&lt;FOLDER1&gt;</code> and <code>&lt;FOLDER2&gt;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>touch &lt;FILE&gt;</code></td>
+<td style="text-align: left;">Creates a new empty file called <code>&lt;FILE&gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>open &lt;FILE&gt;</code></td>
+<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (on macOS)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>start &lt;FILE&gt;</code></td>
+<td style="text-align: left;">Opens the file called <code>&lt;FILE&gt;</code> (On Windows)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>echo 'example text' &gt;&gt; file.txt</code></td>
+<td style="text-align: left;">Writes ‘example text’ into <code>file.txt</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cat &lt;FILE&gt;</code></td>
+<td style="text-align: left;">Displays the content of <file></file></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>mv FILE.txt &lt;FOLDER&gt;</code></td>
+<td style="text-align: left;">Move <code>FILE.txt</code> into <code>&lt;FOLDER&gt;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>mv &lt;FOLDER_OLD&gt; &lt;FOLDER_NEW&gt;</code></td>
+<td style="text-align: left;">Renames <code>&lt;FOLDER_OLD&gt;</code> to <code>&lt;FOLDER_NEW&gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ls -alh *.csv</code></td>
+<td style="text-align: left;">Uses a wildcard to list all <code>.csv</code> files in the current working directory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rm -r &lt;FOLDER&gt;</code></td>
+<td style="text-align: left;">Removes the folder <code>&lt;FOLDER&gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>history</code></td>
+<td style="text-align: left;">Display the command history of the current terminal session</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>history &gt; history.txt</code></td>
+<td style="text-align: left;">Saves the entire command history to a file named ‘history.txt’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>history &gt;&gt; history.txt</code></td>
+<td style="text-align: left;">Adds the entire command history to the end of the file named ‘history.txt’</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 
