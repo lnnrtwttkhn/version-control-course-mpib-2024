@@ -186,7 +186,7 @@
     "href": "sessions/index.html",
     "title": "Sessions",
     "section": "",
-    "text": "Welcome & Introduction to Version Control\n\n\nSession 01\n\n\n\n\n\n\n07:30\n\n\n\n\n\n\n\n\nBasics of the Command Line\n\n\nSession 02\n\n\n\n\n\n\n08:00\n\n\n\n\n\n\n\n\nSetup & First steps with Git\n\n\nSession 03\n\n\n\n\n\n\n09:00\n\n\n\n\n\n\n\n\nBranches\n\n\nSession 04\n\n\n\n\n\n\n10:00\n\n\n\n\n\n\n\n\nLunch Break\n\n\nSession 05\n\n\n\n\n\n\n11:00\n\n\n\n\n\n\n\n\nIntegration with GitLab / GitHub\n\n\nSession 06\n\n\n\n\n\n\n12:00\n\n\n\n\n\n\n\n\nCollaboration on GitLab / GitHub\n\n\nSession 07\n\n\n\n\n\n\n13:00\n\n\n\n\n\n\n\n\nSummary & Outlook\n\n\nSession 08\n\n\n\n\n\n\n14:00\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome & Introduction to Version Control\n\n\nSession 01\n\n\n\n\n\n\n05:30\n\n\n\n\n\n\n\n\nBasics of the Command Line\n\n\nSession 02\n\n\n\n\n\n\n06:00\n\n\n\n\n\n\n\n\nSetup & First steps with Git\n\n\nSession 03\n\n\n\n\n\n\n07:00\n\n\n\n\n\n\n\n\nBranches\n\n\nSession 04\n\n\n\n\n\n\n08:00\n\n\n\n\n\n\n\n\nLunch Break\n\n\nSession 05\n\n\n\n\n\n\n09:00\n\n\n\n\n\n\n\n\nIntegration with GitLab / GitHub\n\n\nSession 06\n\n\n\n\n\n\n10:00\n\n\n\n\n\n\n\n\nCollaboration on GitLab / GitHub\n\n\nSession 07\n\n\n\n\n\n\n11:00\n\n\n\n\n\n\n\n\nSummary & Outlook\n\n\nSession 08\n\n\n\n\n\n\n12:00\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "sessions/session03.html",
@@ -494,7 +494,7 @@
     "href": "sessions/session07.html#cheatsheet",
     "title": "Collaboration on GitLab / GitHub",
     "section": "Cheatsheet",
-    "text": "Cheatsheet\n\n\n\n\n\nCommand\nDescription"
+    "text": "Cheatsheet\n\n\n\n\n\n\n\n\n\nCommand\nDescription\n\n\n\n\ngit remote\nManages remote repositories\n\n\ngit clone\nCreates a local copy of a repository\n\n\ngit pull\nFetches and merges the latest changes from a remote repository into your current branch\n\n\ngit fetch\nUpdates your remote tracking branches\n\n\ngit push\nUploads your local commits to a remote repository"
   },
   {
     "objectID": "resources.html#all",
