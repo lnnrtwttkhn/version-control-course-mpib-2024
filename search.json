@@ -375,7 +375,7 @@
     "href": "sessions/slides_session03.html#staging-and-committing",
     "title": "Session 3: Setup & First steps with Git",
     "section": "Staging and Committing",
-    "text": "Staging and Committing\n\n\nStaging:\n\nCommand: git add\nPurpose: Preparing and organizing files before they are recorded in the repository’s history.\n\n\nCommitting:\n\nCommand: git commit -m \"commit message\"\nPurpose: Saving the changes in the staged files to the repository’s history, creating a snapshot.\n\n\n\n\n\n\n\nSource: git-scm.com"
+    "text": "Staging and Committing\n\n\nStaging:\n\nCommand: git add\nPurpose: Preparing and organizing files before they are recorded in the repository’s history.\n\n\nCommitting:\n\nCommand: git commit -m \"commit message\"\nPurpose: Saving the changes in the staged files to the repository’s history, creating a snapshot.\n\n\n\n\n\n\n\n\n\nSource: git-scm.com\n\n\n\n\n\n\n\n\nSource: Heidi Seibold"
   },
   {
     "objectID": "sessions/slides_session03.html#git-log",
