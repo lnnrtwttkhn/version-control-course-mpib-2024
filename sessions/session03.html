@@ -322,15 +322,15 @@ How can I download the slides as a PDF file?
 <td style="text-align: left;">Get an overview of Git config commands</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>git config --global user.name</code></td>
+<td style="text-align: left;"><code>git config --global "user.name"</code></td>
 <td style="text-align: left;">Sets Git username</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>git config --global user.email</code></td>
+<td style="text-align: left;"><code>git config --global "user.email"</code></td>
 <td style="text-align: left;">Sets Git email address</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>git config --global core.editor</code></td>
+<td style="text-align: left;"><code>git config --global core.editor "editorname"</code></td>
 <td style="text-align: left;">Sets Git text editor</td>
 </tr>
 <tr class="odd">
@@ -351,6 +351,10 @@ How can I download the slides as a PDF file?
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Command</th>
@@ -375,10 +379,14 @@ How can I download the slides as a PDF file?
 <td style="text-align: left;">Commits staged files</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><code>git commit -m "commit message"</code></td>
+<td style="text-align: left;">Commits staged files with a commit message</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><code>git log</code></td>
 <td style="text-align: left;">Views past commits</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><code>git diff</code></td>
 <td style="text-align: left;">Views made changes compared to the last commit</td>
 </tr>
